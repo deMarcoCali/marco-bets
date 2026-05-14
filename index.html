@@ -6,75 +6,106 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="apple-mobile-web-app-title" content="The Book"/>
-<meta name="theme-color" content="#09090b"/>
+<meta name="theme-color" content="#0e0b08"/>
 <title>The Book</title>
 <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVGhlIEJvb2siLCJzaG9ydF9uYW1lIjoiVGhlIEJvb2siLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzA5MDkwYiIsInRoZW1lX2NvbG9yIjoiIzA5MDkwYiIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIyYVdWM1FtOTRiV3h1Y3owaWRIaGxJaUIzYVdSMGFEMGlNakFpSUdacGJHeHRJam9pSWlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpUGp4cmRXSmxjbTVsZEdWeklITjJaeUErUEM5cmRXSmxjbTVsZEdWektqeHdZWFJvSUdROUlrMHhNVEFsTWpJMUlFeHBiV2wwV1c0dE1UQXdMVEl3SUVGMWRHZ3lOREJJTWpRd0lpQm1hV3hzUFNJak9VTkZOekkwSWlCbWIyNTBMV1poYldsc2VUMGlibTl1WlNJZ1ptOXVkQzF6YVhwbFBTSXlNaUlnWm1sc2JESXRZU0JoWTJObGNIUStQR1JsWm5NK1BHUnBkaTl3WVhRZ1ltOXNaRDBpY0hKdloyWnZjbVFpSUdOc1lYTnpQU0ppWVhObElqNDhMMlJsWm5NK1BHSjViV0p2YlQ0OEwySjViV0p2YlQ0OEwyUmxabk0rUEhCaGRHZ2daRDBpVFRFd01TNHlNalV0TVRJZ1RTMDNNQ3d5TVRCRE1qUTRJaUJtYVd4c1BTSWpSall4T1RBaUlEQThZbUZ6WlM0K1BDOXdZWFJvUGp3dlkyVnlkR2xtYVdOaGRHVStQQzl6ZG1jKyIsInNpemVzIjoiYW55IiwidHlwZSI6ImltYWdlL3N2ZyJ9XX0="/>
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSIzNiIgZmlsbD0iIzA5MDkwYiIvPjx0ZXh0IHg9IjkwIiB5PSIxMjAiIGZvbnQtc2l6ZT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn46yPC90ZXh0Pjwvc3ZnPg=="/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&display=swap');
 :root{
-  --bg:#09090b;--surface:#111113;--surface2:#18181b;--border:#1f1f23;--border2:#27272a;
-  --muted:#52525b;--muted2:#71717a;--text:#e2e8f0;--text2:#f1f5f9;
-  --gold:#f59e0b;--green:#4ade80;--red:#f87171;--purple:#a78bfa;
-  --safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);
+  /* ── Warm Casino Suede Palette ── */
+  --bg:#0e0b08;
+  --surface:#1a1410;
+  --surface2:#231c15;
+  --surface3:#2c2318;
+  --border:#2e2419;
+  --border2:#3d3025;
+  --muted:#8a7560;
+  --muted2:#a08c74;
+  --text:#f0e6d3;
+  --text2:#faf3e8;
+  --gold:#e8a020;
+  --gold2:#f5c060;
+  --green:#7eb88a;
+  --green-bg:#0f2014;
+  --green-border:#2a5035;
+  --red:#d4756a;
+  --red-bg:#1f0e0c;
+  --red-border:#5c2520;
+  --amber:#c8894a;
+  --lavender:#a899cc;
+  --lav-bg:#1a1628;
+  --lav-border:#3d3560;
+  --safe-t:env(safe-area-inset-top,0px);
+  --safe-b:env(safe-area-inset-bottom,0px);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{background:var(--bg);color:var(--text);font-family:'DM Mono','Courier New',monospace;height:100%;overflow:hidden;}
+body{background:radial-gradient(ellipse at top,#1c1208 0%,#0e0b08 60%);}
 #root{display:flex;flex-direction:column;height:100vh;max-width:680px;margin:0 auto;}
-
-/* scrollable page area */
 #page{flex:1;overflow-y:auto;padding:calc(var(--safe-t)+14px) 14px 16px;-webkit-overflow-scrolling:touch;}
 #page::-webkit-scrollbar{width:3px;}
-#page::-webkit-scrollbar-thumb{background:#3f3f46;border-radius:2px;}
+#page::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
 
-/* bottom tab bar */
-#tabbar{
-  display:flex;background:var(--surface);border-top:1px solid var(--border);
-  padding:8px 0 calc(var(--safe-b)+8px);flex-shrink:0;
-}
-.tab-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 0;cursor:pointer;border:none;background:transparent;color:var(--muted);transition:color .15s;}
+/* Tab bar — warm suede */
+#tabbar{display:flex;background:var(--surface);border-top:1px solid var(--border2);padding:8px 0 calc(var(--safe-b)+8px);flex-shrink:0;box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+.tab-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 0;cursor:pointer;border:none;background:transparent;color:var(--muted);transition:color .2s;}
 .tab-item.active{color:var(--gold);}
 .tab-icon{font-size:20px;line-height:1;}
 .tab-label{font-size:9px;letter-spacing:.5px;}
 
-/* inputs */
+/* Inputs */
 input,select,textarea{
   background:var(--surface2);border:1px solid var(--border2);color:var(--text);
-  border-radius:6px;padding:8px 12px;width:100%;font-family:inherit;font-size:12px;
-  outline:none;transition:border-color .15s;-webkit-appearance:none;
+  border-radius:8px;padding:8px 12px;width:100%;font-family:inherit;font-size:12px;
+  outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;
 }
-input:focus,select:focus,textarea:focus{border-color:var(--gold);}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2352525b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;}
-select option{background:#18181b;}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(232,160,32,.12);}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a7560' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;}
+select option{background:var(--surface2);}
 textarea{resize:vertical;}
-button{cursor:pointer;font-family:inherit;border:none;transition:all .15s;}
-button:active{transform:scale(.97);opacity:.85;}
+button{cursor:pointer;font-family:inherit;border:none;transition:all .18s;}
+button:active{transform:scale(.96);opacity:.88;}
 
-/* shared layout */
+/* Layout */
 .wrap{max-width:100%;}
-.section-title{font-size:10px;color:var(--muted);letter-spacing:1.5px;margin-bottom:12px;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:8px;}
+
+/* Cards — cognac tinted with soft glow */
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:14px 16px;margin-bottom:8px;
+  box-shadow:0 2px 12px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,220,150,.04);
+  transition:border-color .2s;
+}
+.card:hover{border-color:var(--border2);}
+
 .field-label{font-size:10px;color:var(--muted);letter-spacing:.5px;margin-bottom:4px;}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
 .full{grid-column:1/-1;}
-.row{display:flex;gap:8px;align-items:center;}
 
-/* header */
-.page-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:3px;color:var(--gold);line-height:1;}
+/* Page header */
+.page-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;}
+.logo{
+  font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:3px;color:var(--gold);line-height:1;
+  text-shadow:0 0 30px rgba(232,160,32,.3);
+}
 .logo-sub{font-size:10px;color:var(--muted);letter-spacing:1.5px;margin-top:1px;}
 
-/* stat grid */
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:18px;}
-.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;}
-.stat-label{font-size:9px;color:var(--muted);letter-spacing:1px;margin-bottom:4px;}
-.stat-value{font-size:16px;font-weight:500;}
+/* Stat cards */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px;}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:12px 6px;text-align:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,210,120,.04);
+}
+.stat-label{font-size:9px;color:var(--muted);letter-spacing:.8px;margin-bottom:4px;}
+.stat-value{font-size:15px;font-weight:500;}
 
-/* pill */
-.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:500;border:1px solid;vertical-align:middle;}
-.parlay-tag{font-size:9px;color:var(--purple);border:1px solid #4c1d95;background:#1e1b4b;padding:1px 6px;border-radius:99px;letter-spacing:.5px;}
+/* Pills — warm pastels */
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:10px;font-weight:500;border:1px solid;vertical-align:middle;}
+.parlay-tag{font-size:9px;color:var(--lavender);border:1px solid var(--lav-border);background:var(--lav-bg);padding:1px 7px;border-radius:99px;letter-spacing:.5px;}
 
-/* bet card */
+/* Bet card internals */
 .bet-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
 .bet-left{flex:1;min-width:0;}
 .bet-name{font-size:13px;font-weight:500;color:var(--text2);word-break:break-word;}
@@ -82,91 +113,140 @@ button:active{transform:scale(.97);opacity:.85;}
 .bet-right{text-align:right;flex-shrink:0;}
 .bet-odds{font-size:13px;color:var(--gold);}
 .bet-stake{font-size:11px;color:var(--muted);}
-.bet-notes{font-size:11px;color:var(--muted);margin-top:7px;font-style:italic;}
+.bet-notes{font-size:11px;color:var(--muted);margin-top:7px;font-style:italic;border-left:2px solid var(--border2);padding-left:8px;}
 .card-thumbs{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
-.card-thumb{width:60px;height:60px;object-fit:cover;border-radius:5px;border:1px solid var(--border2);cursor:pointer;}
-.actions{display:flex;gap:4px;margin-top:9px;flex-wrap:wrap;align-items:center;}
-.action-btn{padding:3px 8px;font-size:9px;letter-spacing:.4px;border-radius:5px;border:1px solid;font-weight:500;}
-.edit-btn{padding:3px 8px;font-size:9px;background:#1e293b;color:#94a3b8;border:1px solid #334155;border-radius:5px;margin-left:auto;}
-.del-btn{padding:3px 8px;font-size:9px;background:#2d0a0a;color:var(--red);border:1px solid #7f1d1d;border-radius:5px;}
-
-/* expand */
+.card-thumb{width:58px;height:58px;object-fit:cover;border-radius:7px;border:1px solid var(--border2);cursor:pointer;}
+.actions{display:flex;gap:4px;margin-top:10px;flex-wrap:wrap;align-items:center;}
+.action-btn{padding:3px 9px;font-size:9px;letter-spacing:.4px;border-radius:6px;border:1px solid;font-weight:500;}
+.edit-btn{padding:3px 9px;font-size:9px;background:var(--surface2);color:var(--muted2);border:1px solid var(--border2);border-radius:6px;margin-left:auto;}
+.del-btn{padding:3px 9px;font-size:9px;background:var(--red-bg);color:var(--red);border:1px solid var(--red-border);border-radius:6px;}
 .expand-btn{font-size:10px;background:transparent;color:var(--muted);padding:3px 0;margin-top:5px;letter-spacing:.4px;}
-.legs-list{margin-top:7px;border-top:1px solid #1a1a1d;padding-top:8px;}
+.legs-list{margin-top:7px;border-top:1px solid var(--border);padding-top:8px;}
 .leg-row-d{display:flex;justify-content:space-between;align-items:center;padding:6px 0;gap:6px;flex-wrap:wrap;}
-.leg-row-d+.leg-row-d{border-top:1px solid #141416;}
+.leg-row-d+.leg-row-d{border-top:1px solid var(--border);}
 .leg-actions{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
 
-/* form */
-.form-card{background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:16px;margin-bottom:14px;}
+/* Form */
+.form-card{
+  background:var(--surface);border:1px solid var(--border2);border-radius:14px;
+  padding:18px;margin-bottom:14px;
+  box-shadow:0 4px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,210,120,.05);
+}
 .form-title{font-size:10px;color:var(--gold);letter-spacing:1.5px;margin-bottom:12px;}
 .type-tabs{display:flex;gap:7px;margin-bottom:14px;}
-.type-tab{padding:6px 16px;font-size:12px;border-radius:6px;border:1px solid var(--border2);background:transparent;color:var(--muted);}
-.type-tab.active{background:#f59e0b18;color:var(--gold);border-color:var(--gold);}
-.leg-card{background:#0d0d0f;border:1px solid #1a1a1d;border-radius:8px;padding:11px;margin-bottom:7px;}
+.type-tab{padding:6px 16px;font-size:12px;border-radius:8px;border:1px solid var(--border2);background:transparent;color:var(--muted);}
+.type-tab.active{background:rgba(232,160,32,.12);color:var(--gold);border-color:var(--gold);}
+.leg-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:11px;margin-bottom:7px;}
 .leg-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;}
-.leg-num{font-size:10px;color:var(--purple);letter-spacing:.4px;}
+.leg-num{font-size:10px;color:var(--lavender);letter-spacing:.4px;}
 .leg-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:6px;}
-.add-leg{width:100%;padding:8px;font-size:11px;background:var(--surface2);color:var(--muted);border:1.5px dashed var(--border2);border-radius:6px;}
-.odds-preview{background:#0f0f11;border:1px solid var(--border2);border-radius:6px;padding:7px 11px;font-size:11px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.add-leg{width:100%;padding:9px;font-size:11px;background:transparent;color:var(--muted);border:1.5px dashed var(--border2);border-radius:8px;letter-spacing:.3px;}
+.add-leg:hover{border-color:var(--gold);color:var(--gold);}
+.odds-preview{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;font-size:11px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .payout-line{font-size:11px;color:var(--muted);margin-bottom:9px;}
-.drop-zone{border:1.5px dashed var(--border2);border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:border-color .2s;}
-.drop-zone.drag-over{border-color:var(--gold);}
+.drop-zone{border:1.5px dashed var(--border2);border-radius:10px;padding:16px;text-align:center;cursor:pointer;transition:all .2s;}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--gold);background:rgba(232,160,32,.04);}
 .drop-zone p{font-size:11px;color:var(--muted);}
-.drop-zone small{font-size:10px;color:#3f3f46;display:block;margin-top:2px;}
+.drop-zone small{font-size:10px;color:var(--border2);display:block;margin-top:2px;}
 .thumbs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:7px;}
 .thumb-wrap{position:relative;}
-.thumb{width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--border2);cursor:pointer;display:block;}
-.thumb-del{position:absolute;top:-5px;right:-5px;width:16px;height:16px;background:#7f1d1d;color:#fca5a5;border-radius:50%;font-size:8px;display:flex;align-items:center;justify-content:center;border:none;}
-.errors{background:#2d0a0a;border:1px solid #7f1d1d;border-radius:6px;padding:9px 13px;margin-bottom:11px;}
+.thumb{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--border2);cursor:pointer;display:block;}
+.thumb-del{position:absolute;top:-5px;right:-5px;width:17px;height:17px;background:var(--red-bg);color:var(--red);border-radius:50%;font-size:8px;display:flex;align-items:center;justify-content:center;border:1px solid var(--red-border);}
+.errors{background:var(--red-bg);border:1px solid var(--red-border);border-radius:8px;padding:10px 14px;margin-bottom:12px;}
 .errors p{font-size:11px;color:var(--red);margin-bottom:2px;}
-.submit-btn{background:var(--gold);color:#09090b;padding:10px;font-size:13px;font-weight:700;width:100%;border-radius:8px;letter-spacing:.4px;}
-.new-btn{padding:8px 16px;font-size:12px;font-weight:600;border-radius:7px;}
-
-/* filters */
+.submit-btn{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#1a0e00;padding:11px;font-size:13px;font-weight:700;width:100%;
+  border-radius:10px;letter-spacing:.5px;
+  box-shadow:0 4px 16px rgba(232,160,32,.25);
+}
+.submit-btn:hover{box-shadow:0 6px 20px rgba(232,160,32,.35);}
+.new-btn{padding:8px 18px;font-size:12px;font-weight:600;border-radius:8px;}
 .filters{display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap;}
-.filter-btn{padding:4px 12px;font-size:10px;letter-spacing:.4px;border-radius:6px;border:1px solid var(--border2);background:var(--surface2);color:var(--muted2);}
-.filter-btn.active{background:var(--gold);color:#09090b;border-color:var(--gold);}
-.empty{text-align:center;color:#3f3f46;padding:50px 0;font-size:13px;}
+.filter-btn{padding:4px 12px;font-size:10px;letter-spacing:.4px;border-radius:6px;border:1px solid var(--border2);background:transparent;color:var(--muted);}
+.filter-btn.active{background:var(--gold);color:#1a0e00;border-color:var(--gold);}
+.empty{text-align:center;color:var(--border2);padding:50px 0;font-size:13px;}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:zoom-out;}
+.lightbox img{max-width:94vw;max-height:92vh;border-radius:10px;}
 
-/* lightbox */
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.93);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:zoom-out;}
-.lightbox img{max-width:94vw;max-height:92vh;border-radius:8px;}
-
-/* ── STATS PAGE ── */
-.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px;}
-.chart-title{font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:12px;}
-.bar-chart{display:flex;align-items:flex-end;gap:5px;height:100px;}
-.bar-col{display:flex;flex-direction:column;align-items:center;flex:1;gap:3px;}
-.bar{width:100%;border-radius:3px 3px 0 0;min-height:2px;transition:height .3s;}
+/* ── STATS/BANKROLL ── */
+.chart-wrap{
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:14px;margin-bottom:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+.chart-title{font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:10px;}
+.bar-chart{display:flex;align-items:flex-end;gap:5px;height:90px;}
+.bar-col{display:flex;flex-direction:column;align-items:center;flex:1;gap:2px;}
+.bar{width:100%;border-radius:4px 4px 0 0;min-height:2px;}
 .bar-label{font-size:8px;color:var(--muted);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
 .bar-val{font-size:8px;color:var(--muted2);}
-.line-chart{position:relative;height:100px;overflow:hidden;}
 .sport-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);}
 .sport-row:last-child{border-bottom:none;}
-.streak-badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:13px;font-weight:500;border:1px solid;}
-
-/* ── BANKROLL PAGE ── */
-.bank-hero{background:linear-gradient(135deg,#1a1400,#0f0f11);border:1px solid #3d2e00;border-radius:14px;padding:20px;margin-bottom:14px;text-align:center;}
-.bank-amount{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:2px;color:var(--gold);line-height:1;}
-.bank-sub{font-size:11px;color:var(--muted);margin-top:4px;}
-.progress-bar{background:#1f1f23;border-radius:99px;height:8px;overflow:hidden;margin:8px 0;}
+.streak-badge{display:inline-block;padding:5px 16px;border-radius:99px;font-size:14px;font-weight:500;border:1px solid;}
+.bank-hero{
+  background:linear-gradient(135deg,#1f1508,#150f08);
+  border:1px solid #4a3418;border-radius:14px;padding:20px;margin-bottom:10px;text-align:center;
+  box-shadow:0 4px 24px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,200,100,.06);
+}
+.bank-amount{font-family:'Bebas Neue',sans-serif;font-size:50px;letter-spacing:2px;color:var(--gold);line-height:1;text-shadow:0 0 30px rgba(232,160,32,.3);}
+.bank-sub{font-size:11px;color:var(--muted);margin-top:3px;}
+.progress-bar{background:var(--border);border-radius:99px;height:7px;overflow:hidden;margin:9px 0;}
 .progress-fill{height:100%;border-radius:99px;transition:width .4s;}
-.setting-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);}
+.setting-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);}
 .setting-row:last-child{border-bottom:none;}
 .setting-label{font-size:12px;color:var(--text);}
-.setting-sub{font-size:10px;color:var(--muted);margin-top:2px;}
 .unit-display{font-size:11px;color:var(--gold);}
-
-/* ── TOOLS PAGE ── */
-.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px;}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.3);}
 .tool-title{font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:12px;}
-.conv-result{background:#0f0f11;border:1px solid var(--border2);border-radius:6px;padding:10px 14px;margin-top:10px;}
+.conv-result{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-top:10px;}
 .conv-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;}
 .conv-label{font-size:11px;color:var(--muted);}
 .conv-val{font-size:13px;color:var(--gold);font-weight:500;}
 .export-btn{width:100%;padding:10px;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:.4px;background:var(--surface2);color:var(--text);border:1px solid var(--border2);margin-bottom:8px;}
 .export-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── CALENDAR ── warm velvet board */
+.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.cal-month{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--gold);text-shadow:0 0 20px rgba(232,160,32,.25);}
+.cal-nav-btn{background:var(--surface2);border:1px solid var(--border2);color:var(--muted);border-radius:8px;padding:5px 14px;font-size:14px;}
+.cal-nav-btn:hover{border-color:var(--gold);color:var(--gold);}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:14px;}
+.cal-dow{text-align:center;font-size:9px;color:var(--muted);letter-spacing:.5px;padding:4px 0;}
+.cal-day{
+  position:relative;aspect-ratio:1;border-radius:8px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:default;border:1px solid transparent;transition:all .15s;
+  font-size:12px;color:var(--muted2);background:var(--surface);
+}
+.cal-day.has-bets{cursor:pointer;}
+.cal-day.has-bets:hover{border-color:var(--border2);}
+.cal-day.today{border-color:var(--gold)!important;color:var(--gold);}
+.cal-day.win-day{background:var(--green-bg);color:var(--green);border-color:var(--green-border);}
+.cal-day.loss-day{background:var(--red-bg);color:var(--red);border-color:var(--red-border);}
+.cal-day.mixed-day{background:#1f1508;color:var(--amber);border-color:#4a3418;}
+.cal-day.pending-day .cal-dot{display:block;}
+.cal-dot{display:none;width:4px;height:4px;border-radius:50%;background:var(--gold);position:absolute;bottom:4px;}
+.cal-day.other-month{opacity:.2;background:transparent;}
+.cal-day-num{font-size:12px;font-weight:500;line-height:1;}
+.cal-day-pl{font-size:7px;margin-top:1px;opacity:.9;}
+
+/* Day drawer — warm sheet */
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;backdrop-filter:blur(2px);}
+.drawer{
+  position:fixed;bottom:0;left:0;right:0;max-width:680px;margin:0 auto;
+  background:var(--surface);
+  border-radius:18px 18px 0 0;border-top:1px solid var(--border2);
+  padding:0 16px calc(var(--safe-b)+16px);z-index:101;max-height:76vh;
+  display:flex;flex-direction:column;
+  box-shadow:0 -8px 40px rgba(0,0,0,.6);
+}
+.drawer-handle{width:38px;height:4px;background:var(--border2);border-radius:2px;margin:11px auto 14px;}
+.drawer-title{font-size:11px;color:var(--gold);letter-spacing:1px;margin-bottom:4px;}
+.drawer-pl{font-size:22px;font-weight:500;margin-bottom:12px;}
+.drawer-bets{overflow-y:auto;flex:1;}
+.drawer-bets::-webkit-scrollbar{width:3px;}
+.drawer-empty{color:var(--muted);font-size:12px;padding:20px 0;text-align:center;}
 </style>
 </head>
 <body>
@@ -174,94 +254,87 @@ button:active{transform:scale(.97);opacity:.85;}
   <div id="page"></div>
   <nav id="tabbar"></nav>
 </div>
-
 <script>
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  CONSTANTS
-// ═══════════════════════════════════════════════════════════
-const SPORTS   = ["🏈 NFL","🏀 NBA","⚾ MLB","🏒 NHL","⚽ Soccer","🥊 MMA","🎾 Tennis","🏇 Horse Racing","🎰 Other"];
-const BET_TYPES= ["Moneyline","Spread","Over/Under","Prop","Futures","Live"];
-const STATUSES = ["Pending","Won","Lost","Push","Void"];
-const TABS     = [{id:"bets",icon:"🏠",label:"BETS"},{id:"stats",icon:"📊",label:"STATS"},{id:"bankroll",icon:"💰",label:"BANKROLL"},{id:"tools",icon:"⚙️",label:"TOOLS"}];
-const SS = {
-  Pending:{bg:"#1e293b",color:"#94a3b8",border:"#334155"},
-  Won:    {bg:"#052e16",color:"#4ade80",border:"#166534"},
-  Lost:   {bg:"#2d0a0a",color:"#f87171",border:"#7f1d1d"},
-  Push:   {bg:"#1c1917",color:"#d4a574",border:"#44403c"},
-  Void:   {bg:"#1e1b4b",color:"#a5b4fc",border:"#3730a3"},
+// ═══════════════════════════════════
+const SPORTS   =["🏈 NFL","🏀 NBA","⚾ MLB","🏒 NHL","⚽ Soccer","🥊 MMA","🎾 Tennis","🏇 Horse Racing","🎰 Other"];
+const BET_TYPES=["Moneyline","Spread","Over/Under","Prop","Futures","Live"];
+const STATUSES =["Pending","Won","Lost","Push","Void"];
+const TABS     =[{id:"bets",icon:"🏠",label:"BETS"},{id:"calendar",icon:"📅",label:"CALENDAR"},{id:"stats",icon:"📊",label:"STATS"},{id:"tools",icon:"⚙️",label:"TOOLS"}];
+const DAYS     =["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const MONTHS   =["January","February","March","April","May","June","July","August","September","October","November","December"];
+const SS={
+  Pending:{bg:"#1a1c28",color:"#a899cc",border:"#3d3560"},
+  Won:    {bg:"#0f2014",color:"#7eb88a",border:"#2a5035"},
+  Lost:   {bg:"#1f0e0c",color:"#d4756a",border:"#5c2520"},
+  Push:   {bg:"#1f1508",color:"#c8894a",border:"#4a3418"},
+  Void:   {bg:"#1a1410",color:"#8a7560",border:"#3d3025"},
 };
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  UTILS
-// ═══════════════════════════════════════════════════════════
-const fmt     = n => (n<0?"-$":"$")+Math.abs(n).toFixed(2);
-const fmtPct  = n => (n>=0?"+":"")+n.toFixed(1)+"%";
-const uid     = () => Date.now()+Math.random();
-const today   = () => new Date().toISOString().split("T")[0];
-const clamp   = (v,lo,hi) => Math.max(lo,Math.min(hi,v));
+// ═══════════════════════════════════
+const fmt    = n=>(n<0?"-$":"$")+Math.abs(n).toFixed(2);
+const fmtPct = n=>(n>=0?"+":"")+n.toFixed(1)+"%";
+const uid    = ()=>Date.now()+Math.random();
+const today  = ()=>new Date().toISOString().split("T")[0];
+const clamp  = (v,lo,hi)=>Math.max(lo,Math.min(hi,v));
 
-const toDecimal = odds => {
+const toDecimal=odds=>{
   const n=parseFloat(String(odds||"").replace(/[^0-9.\-]/g,""));
-  if(isNaN(n)||n===0) return 1;
+  if(isNaN(n)||n===0)return 1;
   return n>0?n/100+1:100/Math.abs(n)+1;
 };
-const decToAmerican = dec => {
-  if(!dec||dec<=1) return "";
+const decToAmerican=dec=>{
+  if(!dec||dec<=1)return "";
   const a=dec>=2?Math.round((dec-1)*100):Math.round(-100/(dec-1));
   return a>0?`+${a}`:`${a}`;
 };
-const decToFractional = dec => {
-  if(!dec||dec<=1) return "";
-  const n=dec-1;
-  const gcd=(a,b)=>b<0.001?a:gcd(b,a%b);
+const decToFractional=dec=>{
+  if(!dec||dec<=1)return "";
+  const n=dec-1,gcd=(a,b)=>b<0.001?a:gcd(b,a%b);
   const d=1000,num=Math.round(n*d),den=d,g=gcd(num,den);
   return `${num/g}/${den/g}`;
 };
-const decToImplied = dec => dec>1?(1/dec*100).toFixed(1)+"%":"";
-const parlayDec = legs => legs.reduce((acc,l)=>{const d=toDecimal(l.odds);return d>1?acc*d:acc;},1);
-const toWin = (stake,dec) => stake>0&&dec>1?stake*dec-stake:0;
-const fileToB64 = f => new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f);});
+const decToImplied=dec=>dec>1?(1/dec*100).toFixed(1)+"%":"";
+const parlayDec=legs=>legs.reduce((acc,l)=>{const d=toDecimal(l.odds);return d>1?acc*d:acc;},1);
+const toWin=(stake,dec)=>stake>0&&dec>1?stake*dec-stake:0;
+const fileToB64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f);});
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  STORAGE
-// ═══════════════════════════════════════════════════════════
-const lsGet = (k,def) => { try{const v=localStorage.getItem(k);return v!=null?JSON.parse(v):def;}catch{return def;} };
-const lsSet = (k,v) => { try{localStorage.setItem(k,JSON.stringify(v));}catch{} };
+// ═══════════════════════════════════
+const lsGet=(k,def)=>{try{const v=localStorage.getItem(k);return v!=null?JSON.parse(v):def;}catch{return def;}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch{}};
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  STATE
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 function emptyForm(){return{id:null,isParlay:false,description:"",sport:"",betType:"Moneyline",odds:"",stake:"",sportsbook:"",status:"Pending",date:today(),notes:"",legs:[],images:[]};}
 function emptyLeg(){return{id:uid(),description:"",sport:"",betType:"Moneyline",odds:"",status:"Pending"};}
 
-let S = {
-  tab: "bets",
-  bets: lsGet("tb_bets",[]),
-  showForm: false,
-  editing: null,
-  filter: "All",
-  expanded: {},
-  lightbox: null,
-  errors: [],
-  form: emptyForm(),
-  // bankroll
-  bankroll: lsGet("tb_bankroll",{starting:0,current:0,unitName:"Unit",unitValue:10,useUnits:false}),
-  bankEditing: false,
-  bankForm: {},
-  // tools
-  convOdds: "",
-  convType: "american",
+const now=new Date();
+let S={
+  tab:"bets",
+  bets:lsGet("tb_bets",[]),
+  showForm:false,editing:null,filter:"All",expanded:{},lightbox:null,errors:[],form:emptyForm(),
+  bankroll:lsGet("tb_bankroll",{starting:0,unitName:"Unit",unitValue:10,useUnits:false}),
+  bankEditing:false,bankForm:{},
+  convOdds:"",convType:"american",
+  calYear:now.getFullYear(),calMonth:now.getMonth(),
+  drawerDate:null,
 };
 
 function set(patch){
-  if(typeof patch==="function") Object.assign(S,patch(S));
+  if(typeof patch==="function")Object.assign(S,patch(S));
   else Object.assign(S,patch);
   render();
 }
 
-// ═══════════════════════════════════════════════════════════
-//  DATA HELPERS
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
+//  DATA
+// ═══════════════════════════════════
 function saveBets(b){S.bets=b;lsSet("tb_bets",b);}
 function saveBankroll(b){S.bankroll=b;lsSet("tb_bankroll",b);}
 
@@ -272,16 +345,15 @@ function calcStats(bets){
     const win=toWin(stk,dec);
     if(b.status==="Won"){acc.profit+=win;acc.wins++;acc.wonAmt+=win;}
     if(b.status==="Lost"){acc.profit-=stk;acc.losses++;acc.lostAmt+=stk;}
-    if(b.status==="Push") acc.pushes++;
+    if(b.status==="Push")acc.pushes++;
     return acc;
   },{wagered:0,profit:0,wins:0,losses:0,pushes:0,wonAmt:0,lostAmt:0});
 }
 
 function streakInfo(bets){
   const settled=bets.filter(b=>b.status==="Won"||b.status==="Lost").slice().reverse();
-  if(!settled.length) return{str:0,type:"—"};
-  const t=settled[0].status;
-  let n=0;
+  if(!settled.length)return{str:0,type:"—"};
+  const t=settled[0].status;let n=0;
   for(const b of settled){if(b.status===t)n++;else break;}
   return{str:n,type:t==="Won"?"W":"L"};
 }
@@ -289,9 +361,9 @@ function streakInfo(bets){
 function sportBreakdown(bets){
   const map={};
   bets.forEach(b=>{
-    if(b.status!=="Won"&&b.status!=="Lost") return;
+    if(b.status!=="Won"&&b.status!=="Lost")return;
     const sport=b.sport||"Other";
-    if(!map[sport]) map[sport]={wins:0,losses:0,profit:0};
+    if(!map[sport])map[sport]={wins:0,losses:0,profit:0};
     const dec=b.isParlay?parlayDec(b.legs||[]):toDecimal(b.odds);
     const win=toWin(b.stake||0,dec);
     if(b.status==="Won"){map[sport].wins++;map[sport].profit+=win;}
@@ -304,28 +376,44 @@ function monthlyData(bets){
   const map={};
   bets.filter(b=>b.status==="Won"||b.status==="Lost").forEach(b=>{
     const mo=b.date?b.date.slice(0,7):"?";
-    if(!map[mo]) map[mo]=0;
+    if(!map[mo])map[mo]=0;
     const dec=b.isParlay?parlayDec(b.legs||[]):toDecimal(b.odds);
     const win=toWin(b.stake||0,dec);
-    if(b.status==="Won") map[mo]+=win;
+    if(b.status==="Won")map[mo]+=win;
     else map[mo]-=(b.stake||0);
   });
   return Object.entries(map).sort((a,b)=>a[0].localeCompare(b[0])).slice(-6);
 }
 
+// day map: date string -> {bets, pl, hasWin, hasLoss, hasPending}
+function buildDayMap(bets){
+  const map={};
+  bets.forEach(b=>{
+    const d=b.date;if(!d)return;
+    if(!map[d])map[d]={bets:[],pl:0,hasWin:false,hasLoss:false,hasPending:false};
+    map[d].bets.push(b);
+    const dec=b.isParlay?parlayDec(b.legs||[]):toDecimal(b.odds);
+    const win=toWin(b.stake||0,dec);
+    if(b.status==="Won"){map[d].hasWin=true;map[d].pl+=win;}
+    else if(b.status==="Lost"){map[d].hasLoss=true;map[d].pl-=(b.stake||0);}
+    else if(b.status==="Pending")map[d].hasPending=true;
+  });
+  return map;
+}
+
 function validate(){
   const f=S.form,errs=[];
   const stk=parseFloat(f.stake)||0;
-  if(!f.stake||stk<=0) errs.push("Enter a stake amount.");
+  if(!f.stake||stk<=0)errs.push("Enter a stake amount.");
   if(f.isParlay){
-    if(f.legs.length<2) errs.push("A parlay needs at least 2 legs.");
+    if(f.legs.length<2)errs.push("A parlay needs at least 2 legs.");
     f.legs.forEach((l,i)=>{
-      if(!l.description) errs.push(`Leg ${i+1}: enter a pick.`);
-      if(!l.odds) errs.push(`Leg ${i+1}: enter odds.`);
+      if(!l.description)errs.push(`Leg ${i+1}: enter a pick.`);
+      if(!l.odds)errs.push(`Leg ${i+1}: enter odds.`);
     });
   }else{
-    if(!f.description) errs.push("Enter a description.");
-    if(!f.odds) errs.push("Enter odds.");
+    if(!f.description)errs.push("Enter a description.");
+    if(!f.odds)errs.push("Enter odds.");
   }
   return errs;
 }
@@ -333,17 +421,11 @@ function validate(){
 function submit(){
   const errs=validate();
   if(errs.length){set({errors:errs});return;}
-  const f=S.form;
-  const stk=parseFloat(f.stake);
-  const pDec=parlayDec(f.legs);
-  const pOdds=f.isParlay&&f.legs.length>=2?decToAmerican(pDec):"";
-  const bet={
-    ...f,
-    id:S.editing||uid(),
-    stake:stk,
+  const f=S.form,stk=parseFloat(f.stake);
+  const pDec=parlayDec(f.legs),pOdds=f.isParlay&&f.legs.length>=2?decToAmerican(pDec):"";
+  const bet={...f,id:S.editing||uid(),stake:stk,
     description:f.isParlay?(f.description.trim()||`${f.legs.length}-Leg Parlay`):f.description.trim(),
-    odds:f.isParlay?pOdds:f.odds,
-  };
+    odds:f.isParlay?pOdds:f.odds};
   const updated=S.editing?S.bets.map(b=>b.id===S.editing?bet:b):[bet,...S.bets];
   saveBets(updated);
   set({errors:[],showForm:false,editing:null,form:emptyForm()});
@@ -352,13 +434,8 @@ function submit(){
 function updateStatus(id,status){saveBets(S.bets.map(b=>b.id===id?{...b,status}:b));render();}
 function updateLegStatus(betId,legId,status){saveBets(S.bets.map(b=>b.id===betId?{...b,legs:b.legs.map(l=>l.id===legId?{...l,status}:l)}:b));render();}
 function deleteBet(id){saveBets(S.bets.filter(b=>b.id!==id));render();}
+async function handleImages(files){const b64s=await Promise.all([...files].map(fileToB64));set(s=>({form:{...s.form,images:[...(s.form.images||[]),...b64s]}}));}
 
-async function handleImages(files){
-  const b64s=await Promise.all([...files].map(fileToB64));
-  set(s=>({form:{...s.form,images:[...(s.form.images||[]),...b64s]}}));
-}
-
-// ─── CSV Export ───────────────────────────────────────────
 function exportCSV(){
   const rows=[["Date","Description","Type","Sport","Sportsbook","Odds","Stake","To Win","Status","Notes"]];
   S.bets.forEach(b=>{
@@ -372,163 +449,126 @@ function exportCSV(){
   a.download="thebook-bets.csv";a.click();
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  DOM HELPERS
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 function el(tag,attrs={},children=[]){
   const e=document.createElement(tag);
   Object.entries(attrs).forEach(([k,v])=>{
-    if(k==="style"&&typeof v==="object") Object.assign(e.style,v);
-    else if(k.startsWith("on")&&typeof v==="function") e.addEventListener(k.slice(2).toLowerCase(),v);
-    else if(k==="cls") e.className=v;
+    if(k==="style"&&typeof v==="object")Object.assign(e.style,v);
+    else if(k.startsWith("on")&&typeof v==="function")e.addEventListener(k.slice(2).toLowerCase(),v);
+    else if(k==="cls")e.className=v;
     else e.setAttribute(k,v);
   });
   children.flat(Infinity).forEach(c=>{if(c==null)return;e.appendChild(typeof c==="string"?document.createTextNode(c):c);});
   return e;
 }
-function pill(status){
-  const s=SS[status]||SS.Pending;
-  return el("span",{cls:"pill",style:{background:s.bg,color:s.color,borderColor:s.border}},[status]);
-}
-function actionBtn(label,s,onClick){
-  const st=SS[s];
-  return el("button",{cls:"action-btn",style:{background:st.bg,color:st.color,borderColor:st.border},onClick},[label]);
-}
-function field(labelText,input){
-  return el("div",{},[el("div",{cls:"field-label"},[labelText]),input]);
-}
+function pill(status){const s=SS[status]||SS.Pending;return el("span",{cls:"pill",style:{background:s.bg,color:s.color,borderColor:s.border}},[status]);}
+function actionBtn(label,s,onClick){const st=SS[s];return el("button",{cls:"action-btn",style:{background:st.bg,color:st.color,borderColor:st.border},onClick},[label]);}
+function field(labelText,input){return el("div",{},[el("div",{cls:"field-label"},[labelText]),input]);}
 function selEl(opts,val,onChange,placeholder){
   const s=el("select",{onChange});
-  if(placeholder) s.appendChild(el("option",{value:""},[placeholder]));
+  if(placeholder)s.appendChild(el("option",{value:""},[placeholder]));
   opts.forEach(o=>{const opt=el("option",{},[o]);if(o===val)opt.selected=true;s.appendChild(opt);});
   s.value=val||"";return s;
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  RENDER
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 function render(){
   const page=document.getElementById("page");
   const tabbar=document.getElementById("tabbar");
   page.innerHTML="";tabbar.innerHTML="";
 
-  // Tab bar
   TABS.forEach(t=>{
-    const btn=el("button",{cls:"tab-item"+(S.tab===t.id?" active":""),onClick:()=>set({tab:t.id,showForm:false,errors:[]})});
+    const btn=el("button",{cls:"tab-item"+(S.tab===t.id?" active":""),onClick:()=>set({tab:t.id,showForm:false,errors:[],drawerDate:null})});
     btn.appendChild(el("span",{cls:"tab-icon"},[t.icon]));
     btn.appendChild(el("span",{cls:"tab-label"},[t.label]));
     tabbar.appendChild(btn);
   });
 
-  // Page content
-  const content = S.tab==="bets"    ? buildBetsPage()
-                : S.tab==="stats"   ? buildStatsPage()
-                : S.tab==="bankroll"? buildBankrollPage()
-                : buildToolsPage();
+  const content=S.tab==="bets"?buildBetsPage():S.tab==="calendar"?buildCalendarPage():S.tab==="stats"?buildStatsPage():buildToolsPage();
   page.appendChild(content);
 
-  // Lightbox
-  document.querySelectorAll(".lightbox").forEach(e=>e.remove());
+  document.querySelectorAll(".lightbox,.drawer-overlay,.drawer").forEach(e=>e.remove());
   if(S.lightbox){
-    const lb=el("div",{cls:"lightbox",onClick:()=>set({lightbox:null})},[el("img",{src:S.lightbox})]);
-    document.body.appendChild(lb);
+    document.body.appendChild(el("div",{cls:"lightbox",onClick:()=>set({lightbox:null})},[el("img",{src:S.lightbox})]));
+  }
+  if(S.drawerDate){
+    buildDrawer(S.drawerDate);
   }
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  BETS PAGE
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 function buildBetsPage(){
   const wrap=el("div",{cls:"wrap"});
-  wrap.appendChild(buildBetsHeader());
+  const newBtn=el("button",{cls:"new-btn",style:{background:S.showForm?"#27272a":"#f59e0b",color:S.showForm?"#a1a1aa":"#09090b"},onClick:()=>{
+    if(S.showForm)set({showForm:false,editing:null,form:emptyForm(),errors:[]});
+    else set({showForm:true,editing:null,form:emptyForm(),errors:[]});
+  }},[S.showForm?"✕ Cancel":"+ New Bet"]);
+  wrap.appendChild(el("div",{cls:"page-header"},[el("div",{},[el("div",{cls:"logo"},["THE BOOK"]),el("div",{cls:"logo-sub"},["BET TRACKER"])]),newBtn]));
   wrap.appendChild(buildMiniStats());
-  if(S.showForm) wrap.appendChild(buildForm());
+  if(S.showForm)wrap.appendChild(buildForm());
   wrap.appendChild(buildFilters());
   wrap.appendChild(buildBetList());
   return wrap;
 }
 
-function buildBetsHeader(){
-  const newBtn=el("button",{
-    cls:"new-btn",
-    style:{background:S.showForm?"#27272a":"#f59e0b",color:S.showForm?"#a1a1aa":"#09090b"},
-    onClick:()=>{
-      if(S.showForm) set({showForm:false,editing:null,form:emptyForm(),errors:[]});
-      else set({showForm:true,editing:null,form:emptyForm(),errors:[]});
-    }
-  },[S.showForm?"✕ Cancel":"+ New Bet"]);
-  return el("div",{cls:"page-header"},[
-    el("div",{},[el("div",{cls:"logo"},["THE BOOK"]),el("div",{cls:"logo-sub"},["BET TRACKER"])]),
-    newBtn
-  ]);
-}
-
 function buildMiniStats(){
-  const st=calcStats(S.bets);
-  const roi=st.wagered>0?(st.profit/st.wagered)*100:0;
-  const items=[
-    {label:"P/L",value:fmt(st.profit),color:st.profit>=0?"#4ade80":"#f87171"},
-    {label:"ROI",value:fmtPct(roi),color:roi>=0?"#4ade80":"#f87171"},
-    {label:"W-L",value:`${st.wins}-${st.losses}`,color:"#e2e8f0"},
-    {label:"WAGERED",value:`$${st.wagered.toFixed(0)}`,color:"#94a3b8"},
-  ];
+  const st=calcStats(S.bets),roi=st.wagered>0?(st.profit/st.wagered)*100:0;
   const grid=el("div",{cls:"stat-grid"});
-  items.forEach(i=>{
-    grid.appendChild(el("div",{cls:"stat-card"},[
-      el("div",{cls:"stat-label"},[i.label]),
-      el("div",{cls:"stat-value",style:{color:i.color}},[i.value]),
-    ]));
-  });
+  [{label:"P/L",value:fmt(st.profit),color:st.profit>=0?"#4ade80":"#f87171"},
+   {label:"ROI",value:fmtPct(roi),color:roi>=0?"#4ade80":"#f87171"},
+   {label:"W-L",value:`${st.wins}-${st.losses}`,color:"#e2e8f0"},
+   {label:"WAGERED",value:`$${st.wagered.toFixed(0)}`,color:"#94a3b8"}
+  ].forEach(i=>grid.appendChild(el("div",{cls:"stat-card"},[el("div",{cls:"stat-label"},[i.label]),el("div",{cls:"stat-value",style:{color:i.color}},[i.value])])));
   return grid;
 }
 
 function buildFilters(){
   const wrap=el("div",{cls:"filters"});
-  ["All",...STATUSES].forEach(f=>{
-    wrap.appendChild(el("button",{cls:"filter-btn"+(S.filter===f?" active":""),onClick:()=>set({filter:f})},[f.toUpperCase()]));
-  });
+  ["All",...STATUSES].forEach(f=>wrap.appendChild(el("button",{cls:"filter-btn"+(S.filter===f?" active":""),onClick:()=>set({filter:f})},[f.toUpperCase()])));
   return wrap;
 }
 
 function buildBetList(){
   const filtered=S.filter==="All"?S.bets:S.bets.filter(b=>b.status===S.filter);
-  if(!filtered.length) return el("div",{cls:"empty"},[S.bets.length===0?"No bets logged yet.":"No bets match this filter."]);
+  if(!filtered.length)return el("div",{cls:"empty"},[S.bets.length===0?"No bets logged yet.":"No bets match this filter."]);
   const list=el("div",{});
   filtered.forEach(bet=>list.appendChild(buildBetCard(bet)));
   return list;
 }
 
-function buildBetCard(bet){
+function buildBetCard(bet,compact=false){
   const s=SS[bet.status];
   const dec=bet.isParlay?parlayDec(bet.legs||[]):toDecimal(bet.odds);
   const win=toWin(bet.stake||0,dec);
   const oddsLabel=bet.isParlay?(bet.odds||decToAmerican(dec)):(parseFloat(bet.odds)>0?`+${bet.odds}`:bet.odds);
   const isExp=!!S.expanded[bet.id];
   const card=el("div",{cls:"card"});
-
-  // Top
   const top=el("div",{cls:"bet-top"});
   const left=el("div",{cls:"bet-left"});
   const nameRow=el("div",{style:{display:"flex",alignItems:"center",flexWrap:"wrap",gap:"4px",marginBottom:"3px"}});
-  if(bet.isParlay) nameRow.appendChild(el("span",{cls:"parlay-tag"},["🔗 PARLAY"]));
+  if(bet.isParlay)nameRow.appendChild(el("span",{cls:"parlay-tag"},["🔗 PARLAY"]));
   nameRow.appendChild(el("span",{cls:"bet-name"},[bet.description]));
   nameRow.appendChild(pill(bet.status));
   left.appendChild(nameRow);
   const meta=el("div",{cls:"bet-meta"});
-  if(!bet.isParlay&&bet.sport) meta.appendChild(el("span",{},[bet.sport]));
-  if(!bet.isParlay) meta.appendChild(el("span",{},[bet.betType]));
-  if(bet.sportsbook) meta.appendChild(el("span",{},[bet.sportsbook]));
-  if(bet.isParlay) meta.appendChild(el("span",{},[(bet.legs||[]).length+" legs"]));
+  if(!bet.isParlay&&bet.sport)meta.appendChild(el("span",{},[bet.sport]));
+  if(!bet.isParlay)meta.appendChild(el("span",{},[bet.betType]));
+  if(bet.sportsbook)meta.appendChild(el("span",{},[bet.sportsbook]));
+  if(bet.isParlay)meta.appendChild(el("span",{},[(bet.legs||[]).length+" legs"]));
   meta.appendChild(el("span",{},[bet.date]));
   left.appendChild(meta);
   top.appendChild(left);
   const right=el("div",{cls:"bet-right"});
   right.appendChild(el("div",{cls:"bet-odds"},[oddsLabel]));
   right.appendChild(el("div",{cls:"bet-stake"},["$"+bet.stake+" → ",el("span",{style:{color:"#94a3b8"}},[fmt(win)])]));
-  top.appendChild(right);
-  card.appendChild(top);
+  top.appendChild(right);card.appendChild(top);
 
-  // Parlay legs
   if(bet.isParlay){
     card.appendChild(el("button",{cls:"expand-btn",onClick:()=>set(s=>({expanded:{...s.expanded,[bet.id]:!s.expanded[bet.id]}}))},[isExp?`▲ Hide legs`:`▼ Show ${(bet.legs||[]).length} legs`]));
     if(isExp){
@@ -537,239 +577,269 @@ function buildBetCard(bet){
         const ls=SS[leg.status||"Pending"];
         const row=el("div",{cls:"leg-row-d"});
         const nd=el("div",{},[el("span",{style:{fontSize:"11px",color:"#d1d5db"}},[leg.description])]);
-        if(leg.sport) nd.appendChild(el("span",{style:{fontSize:"10px",color:"var(--muted)",marginLeft:"5px"}},[leg.sport]));
+        if(leg.sport)nd.appendChild(el("span",{style:{fontSize:"10px",color:"var(--muted)",marginLeft:"5px"}},[leg.sport]));
         row.appendChild(nd);
         const acts=el("div",{cls:"leg-actions"});
         acts.appendChild(el("span",{style:{fontSize:"10px",color:"#f59e0b"}},[parseFloat(leg.odds)>0?`+${leg.odds}`:leg.odds]));
         acts.appendChild(pill(leg.status||"Pending"));
-        STATUSES.filter(st=>st!==(leg.status||"Pending")).forEach(st=>{
-          acts.appendChild(actionBtn(st,st,()=>updateLegStatus(bet.id,leg.id,st)));
-        });
+        STATUSES.filter(st=>st!==(leg.status||"Pending")).forEach(st=>acts.appendChild(actionBtn(st,st,()=>updateLegStatus(bet.id,leg.id,st))));
         row.appendChild(acts);ll.appendChild(row);
       });
       card.appendChild(ll);
     }
   }
-
-  if(bet.notes) card.appendChild(el("div",{cls:"bet-notes"},[bet.notes]));
+  if(bet.notes)card.appendChild(el("div",{cls:"bet-notes"},[bet.notes]));
   if((bet.images||[]).length>0){
     const ct=el("div",{cls:"card-thumbs"});
     bet.images.forEach(src=>ct.appendChild(el("img",{src,cls:"card-thumb",onClick:()=>set({lightbox:src})})));
     card.appendChild(ct);
   }
-
-  const actions=el("div",{cls:"actions"});
-  STATUSES.filter(st=>st!==bet.status).forEach(st=>{
-    actions.appendChild(actionBtn("Mark "+st,st,()=>updateStatus(bet.id,st)));
-  });
-  actions.appendChild(el("button",{cls:"edit-btn",onClick:()=>{
-    set({form:{...bet,stake:String(bet.stake),images:bet.images||[]},editing:bet.id,showForm:true,errors:[]});
-    document.getElementById("page").scrollTo({top:0,behavior:"smooth"});
-  }},["Edit"]));
-  actions.appendChild(el("button",{cls:"del-btn",onClick:()=>{if(confirm("Delete this bet?"))deleteBet(bet.id);}},["Delete"]));
-  card.appendChild(actions);
+  if(!compact){
+    const actions=el("div",{cls:"actions"});
+    STATUSES.filter(st=>st!==bet.status).forEach(st=>actions.appendChild(actionBtn("Mark "+st,st,()=>updateStatus(bet.id,st))));
+    actions.appendChild(el("button",{cls:"edit-btn",onClick:()=>{set({form:{...bet,stake:String(bet.stake),images:bet.images||[]},editing:bet.id,showForm:true,errors:[],tab:"bets",drawerDate:null});document.getElementById("page").scrollTo({top:0,behavior:"smooth"});}},["Edit"]));
+    actions.appendChild(el("button",{cls:"del-btn",onClick:()=>{if(confirm("Delete this bet?"))deleteBet(bet.id);}},["Delete"]));
+    card.appendChild(actions);
+  }
   return card;
 }
 
-// ═══════════════════════════════════════════════════════════
-//  FORM
-// ═══════════════════════════════════════════════════════════
-function buildForm(){
-  const f=S.form;
-  const card=el("div",{cls:"form-card"});
-  card.appendChild(el("div",{cls:"form-title"},[S.editing?"EDIT BET":"LOG BET"]));
+// ═══════════════════════════════════
+//  CALENDAR PAGE
+// ═══════════════════════════════════
+function buildCalendarPage(){
+  const wrap=el("div",{cls:"wrap"});
+  wrap.appendChild(el("div",{cls:"page-header"},[el("div",{},[el("div",{cls:"logo"},["CALENDAR"]),el("div",{cls:"logo-sub"},["BET HISTORY"])])]));
 
-  if(!S.editing){
-    const tabs=el("div",{cls:"type-tabs"});
-    [{l:"Single",p:false},{l:"🔗 Parlay",p:true}].forEach(t=>{
-      tabs.appendChild(el("button",{cls:"type-tab"+(f.isParlay===t.p?" active":""),onClick:()=>set({form:{...emptyForm(),isParlay:t.p},errors:[]})},[t.l]));
-    });
-    card.appendChild(tabs);
+  const dayMap=buildDayMap(S.bets);
+  const yr=S.calYear,mo=S.calMonth;
+  const firstDay=new Date(yr,mo,1).getDay();
+  const daysInMonth=new Date(yr,mo+1,0).getDate();
+  const daysInPrev=new Date(yr,mo,0).getDate();
+  const todayStr=today();
+
+  // Nav
+  const nav=el("div",{cls:"cal-nav"});
+  nav.appendChild(el("button",{cls:"cal-nav-btn",onClick:()=>{
+    let m=mo-1,y=yr;if(m<0){m=11;y--;}
+    set({calMonth:m,calYear:y});
+  }},["‹"]));
+  nav.appendChild(el("div",{cls:"cal-month"},[MONTHS[mo]+" "+yr]));
+  nav.appendChild(el("button",{cls:"cal-nav-btn",onClick:()=>{
+    let m=mo+1,y=yr;if(m>11){m=0;y++;}
+    set({calMonth:m,calYear:y});
+  }},["›"]));
+  wrap.appendChild(nav);
+
+  // Day of week headers
+  const grid=el("div",{cls:"cal-grid"});
+  DAYS.forEach(d=>grid.appendChild(el("div",{cls:"cal-dow"},[d])));
+
+  // Previous month fill
+  for(let i=0;i<firstDay;i++){
+    const dayNum=daysInPrev-firstDay+i+1;
+    grid.appendChild(el("div",{cls:"cal-day other-month"},[el("div",{cls:"cal-day-num"},[String(dayNum)])]));
   }
 
-  if(!f.isParlay) card.appendChild(buildSingleFields());
-  else card.appendChild(buildParlayFields());
-
-  if(!f.isParlay){
-    const stk=parseFloat(f.stake)||0,dec=toDecimal(f.odds),win=toWin(stk,dec);
-    const dateInp=el("input",{type:"date",value:f.date,onChange:e=>set(s=>({form:{...s.form,date:e.target.value}}))});
-    card.appendChild(el("div",{style:{marginBottom:"9px"}},[field("DATE",dateInp)]));
-    if(stk>0&&f.odds&&win>0) card.appendChild(el("div",{cls:"payout-line"},["To win: ",el("span",{style:{color:"#4ade80"}},[fmt(win)]),"  ·  Total: ",el("span",{style:{color:"#94a3b8"}},[fmt(win+stk)])]));
+  // Current month days
+  for(let d=1;d<=daysInMonth;d++){
+    const dateStr=`${yr}-${String(mo+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    const info=dayMap[dateStr];
+    let cls="cal-day";
+    if(dateStr===todayStr)cls+=" today";
+    if(info){
+      cls+=" has-bets";
+      if(info.hasWin&&!info.hasLoss)cls+=" win-day";
+      else if(info.hasLoss&&!info.hasWin)cls+=" loss-day";
+      else if(info.hasWin&&info.hasLoss)cls+=" mixed-day";
+      if(info.hasPending)cls+=" pending-day";
+    }
+    const dayEl=el("div",{cls});
+    dayEl.appendChild(el("div",{cls:"cal-day-num"},[String(d)]));
+    if(info&&(info.hasWin||info.hasLoss)){
+      dayEl.appendChild(el("div",{cls:"cal-day-pl"},[info.pl>=0?"+$"+info.pl.toFixed(0):"-$"+Math.abs(info.pl).toFixed(0)]));
+    }
+    if(info&&info.hasPending)dayEl.appendChild(el("div",{cls:"cal-dot"}));
+    if(info){
+      dayEl.addEventListener("click",()=>set({drawerDate:dateStr}));
+    }
+    grid.appendChild(dayEl);
   }
 
-  // Notes
-  const notesEl=el("textarea",{rows:"2",placeholder:"Reasoning, line movement, etc.",onChange:e=>set(s=>({form:{...s.form,notes:e.target.value}}))});
-  notesEl.value=f.notes;
-  card.appendChild(el("div",{style:{marginBottom:"9px"}},[field("NOTES",notesEl)]));
-
-  // Images
-  card.appendChild(buildImageUpload());
-
-  if(S.editing){
-    const sel=selEl(STATUSES,f.status,e=>set(s=>({form:{...s.form,status:e.target.value}})));
-    card.appendChild(el("div",{style:{marginBottom:"11px"}},[field("STATUS",sel)]));
+  // Next month fill
+  const total=firstDay+daysInMonth;
+  const remaining=total%7===0?0:7-(total%7);
+  for(let i=1;i<=remaining;i++){
+    grid.appendChild(el("div",{cls:"cal-day other-month"},[el("div",{cls:"cal-day-num"},[String(i)])]));
   }
 
-  if(S.errors.length){
-    const eb=el("div",{cls:"errors"});
-    S.errors.forEach(e=>eb.appendChild(el("p",{},["• "+e])));
-    card.appendChild(eb);
-  }
-
-  const lc=f.legs.length;
-  card.appendChild(el("button",{cls:"submit-btn",onClick:submit},[S.editing?"Update Bet":f.isParlay?`Log Parlay (${lc} leg${lc!==1?"s":""})`:"Log Bet"]));
-  return card;
-}
-
-function buildSingleFields(){
-  const f=S.form;
-  const wrap=el("div",{cls:"grid2",style:{marginBottom:"9px"}});
-  const di=el("input",{type:"text",placeholder:"Chiefs -3.5 vs Ravens",value:f.description,onChange:e=>set(s=>({form:{...s.form,description:e.target.value}}))});
-  wrap.appendChild(el("div",{cls:"full"},[field("DESCRIPTION",di)]));
-  wrap.appendChild(field("SPORT",selEl(SPORTS,f.sport,e=>set(s=>({form:{...s.form,sport:e.target.value}})),"Select sport")));
-  wrap.appendChild(field("BET TYPE",selEl(BET_TYPES,f.betType,e=>set(s=>({form:{...s.form,betType:e.target.value}})))));
-  const oi=el("input",{type:"text",placeholder:"-110",value:f.odds,onChange:e=>set(s=>({form:{...s.form,odds:e.target.value}}))});
-  wrap.appendChild(field("ODDS (American)",oi));
-  const si=el("input",{type:"number",min:"0",placeholder:"50",value:f.stake,onChange:e=>set(s=>({form:{...s.form,stake:e.target.value}}))});
-  wrap.appendChild(field("STAKE ($)",si));
-  const sbi=el("input",{type:"text",placeholder:"DraftKings",value:f.sportsbook||"",onChange:e=>set(s=>({form:{...s.form,sportsbook:e.target.value}}))});
-  wrap.appendChild(field("SPORTSBOOK",sbi));
-  return wrap;
-}
-
-function buildParlayFields(){
-  const f=S.form;
-  const pDec=parlayDec(f.legs),pOdds=f.legs.length>=2?decToAmerican(pDec):"";
-  const stk=parseFloat(f.stake)||0,win=toWin(stk,pDec);
-  const wrap=el("div",{});
-  const grid=el("div",{cls:"grid2",style:{marginBottom:"12px"}});
-  const ni=el("input",{type:"text",placeholder:"Sunday Ticket",value:f.description,onChange:e=>set(s=>({form:{...s.form,description:e.target.value}}))});
-  grid.appendChild(field("PARLAY NAME (optional)",ni));
-  const di=el("input",{type:"date",value:f.date,onChange:e=>set(s=>({form:{...s.form,date:e.target.value}}))});
-  grid.appendChild(field("DATE",di));
-  const si=el("input",{type:"number",min:"0",placeholder:"25",value:f.stake,onChange:e=>set(s=>({form:{...s.form,stake:e.target.value}}))});
-  grid.appendChild(field("STAKE ($)",si));
-  const sbi=el("input",{type:"text",placeholder:"FanDuel",value:f.sportsbook||"",onChange:e=>set(s=>({form:{...s.form,sportsbook:e.target.value}}))});
-  grid.appendChild(field("SPORTSBOOK",sbi));
-  // odds preview spans full width
-  const preview=el("div",{cls:"full"});
-  const pb=el("div",{cls:"odds-preview"});
-  pb.appendChild(el("span",{style:{color:"var(--muted)"}},["Parlay odds: "]));
-  pb.appendChild(el("span",{style:{color:pOdds?"#f59e0b":"#3f3f46"}},[pOdds||(f.legs.length<2?"add ≥2 legs":"—")]));
-  if(win>0&&stk>0) pb.appendChild(el("span",{style:{color:"#4ade80"}},["→ "+fmt(win)]));
-  preview.appendChild(pb);
-  grid.appendChild(preview);
   wrap.appendChild(grid);
 
-  // Legs
-  const lw=el("div",{style:{marginBottom:"11px"}});
-  lw.appendChild(el("div",{style:{fontSize:"10px",color:"var(--muted)",letterSpacing:".5px",marginBottom:"7px"}},[`LEGS (${f.legs.length})`]));
-  f.legs.forEach((leg,i)=>{
-    const lc=el("div",{cls:"leg-card"});
-    const lh=el("div",{cls:"leg-header"});
-    lh.appendChild(el("span",{cls:"leg-num"},[`LEG ${i+1}`]));
-    lh.appendChild(el("button",{style:{background:"transparent",color:"#f87171",fontSize:"10px",padding:"2px 7px",border:"1px solid #3f1212",borderRadius:"4px"},onClick:()=>set(s=>({form:{...s.form,legs:s.form.legs.filter(l=>l.id!==leg.id)}}))}},["✕ Remove"]));
-    lc.appendChild(lh);
-    const lg=el("div",{cls:"leg-grid"});
-    const pi=el("input",{type:"text",placeholder:"Chiefs ML",value:leg.description,onChange:e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,description:v}:l)}}));}});
-    lg.appendChild(field("PICK",pi));
-    lg.appendChild(field("SPORT",selEl(SPORTS,leg.sport,e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,sport:v}:l)}}));},"—")));
-    lg.appendChild(field("TYPE",selEl(BET_TYPES,leg.betType,e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,betType:v}:l)}}));}))));
-    const oi=el("input",{type:"text",placeholder:"-110",value:leg.odds,onChange:e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,odds:v}:l)}}));}});
-    lg.appendChild(field("ODDS",oi));
-    lc.appendChild(lg);
-    if(S.editing){
-      const ss=selEl(STATUSES,leg.status||"Pending",e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,status:v}:l)}}));});
-      lc.appendChild(el("div",{style:{marginTop:"7px"}},[field("STATUS",ss)]));
-    }
-    lw.appendChild(lc);
+  // Legend
+  const legend=el("div",{style:{display:"flex",gap:"12px",flexWrap:"wrap",marginBottom:"14px",fontSize:"10px",color:"var(--muted)"}});
+  [{bg:"#052e16",border:"#166534",color:"#4ade80",label:"Win day"},
+   {bg:"#2d0a0a",border:"#7f1d1d",color:"#f87171",label:"Loss day"},
+   {bg:"#1c1917",border:"#44403c",color:"#d4a574",label:"Mixed"},
+  ].forEach(({bg,border,color,label})=>{
+    const item=el("div",{style:{display:"flex",alignItems:"center",gap:"5px"}});
+    item.appendChild(el("div",{style:{width:"12px",height:"12px",borderRadius:"3px",background:bg,border:`1px solid ${border}`}}));
+    item.appendChild(el("span",{style:{color}},[label]));
+    legend.appendChild(item);
   });
-  lw.appendChild(el("button",{cls:"add-leg",onClick:()=>set(s=>({form:{...s.form,legs:[...s.form.legs,emptyLeg()]}}))}},["+ Add Leg"]));
-  wrap.appendChild(lw);
-  return wrap;
-}
+  legend.appendChild(el("div",{style:{display:"flex",alignItems:"center",gap:"5px"}},[
+    el("div",{style:{width:"6px",height:"6px",borderRadius:"50%",background:"var(--gold)",marginLeft:"4px"}}),
+    el("span",{},[" Pending"]),
+  ]));
+  wrap.appendChild(legend);
 
-function buildImageUpload(){
-  const f=S.form;
-  const wrap=el("div",{style:{marginBottom:"12px"}});
-  wrap.appendChild(el("div",{cls:"field-label"},["ATTACHMENTS"]));
-  const fi=el("input",{type:"file",accept:"image/*",multiple:"true",style:{display:"none"},onChange:e=>handleImages(e.target.files)});
-  wrap.appendChild(fi);
-  if((f.images||[]).length>0){
-    const th=el("div",{cls:"thumbs"});
-    f.images.forEach((src,i)=>{
-      const tw=el("div",{cls:"thumb-wrap"});
-      tw.appendChild(el("img",{src,cls:"thumb",onClick:()=>set({lightbox:src})}));
-      tw.appendChild(el("button",{cls:"thumb-del",onClick:()=>set(s=>({form:{...s.form,images:s.form.images.filter((_,j)=>j!==i)}}))}},["✕"]));
-      th.appendChild(tw);
-    });
-    wrap.appendChild(th);
-  }
-  const dz=el("div",{cls:"drop-zone",onClick:()=>fi.click()});
-  dz.appendChild(el("p",{},["📎 Click or drag images to attach"]));
-  dz.appendChild(el("small",{},["screenshots, tickets, receipts"]));
-  dz.addEventListener("dragover",e=>{e.preventDefault();dz.classList.add("drag-over");});
-  dz.addEventListener("dragleave",()=>dz.classList.remove("drag-over"));
-  dz.addEventListener("drop",e=>{e.preventDefault();dz.classList.remove("drag-over");handleImages(e.dataTransfer.files);});
-  wrap.appendChild(dz);
-  return wrap;
-}
-
-// ═══════════════════════════════════════════════════════════
-//  STATS PAGE
-// ═══════════════════════════════════════════════════════════
-function buildStatsPage(){
-  const wrap=el("div",{cls:"wrap"});
-  wrap.appendChild(el("div",{cls:"page-header"},[el("div",{},[el("div",{cls:"logo"},["STATS"]),el("div",{cls:"logo-sub"},["PERFORMANCE"])])]));
-
-  const st=calcStats(S.bets);
-  const roi=st.wagered>0?(st.profit/st.wagered)*100:0;
-  const streak=streakInfo(S.bets);
-  const total=st.wins+st.losses;
-  const winRate=total>0?((st.wins/total)*100).toFixed(1):0;
-
-  // Full stat grid
-  const grid=el("div",{style:{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"7px",marginBottom:"14px"}});
-  [
-    {label:"WIN RATE",value:`${winRate}%`,color:"#e2e8f0"},
-    {label:"AVG WIN",value:st.wins>0?fmt(st.wonAmt/st.wins):"—",color:"#4ade80"},
-    {label:"AVG LOSS",value:st.losses>0?fmt(st.lostAmt/st.losses):"—",color:"#f87171"},
-    {label:"TOTAL BETS",value:S.bets.length,color:"#94a3b8"},
-    {label:"PUSHES",value:st.pushes,color:"#d4a574"},
-    {label:"NET P/L",value:fmt(st.profit),color:st.profit>=0?"#4ade80":"#f87171"},
+  // Month summary
+  const moStr=`${yr}-${String(mo+1).padStart(2,"0")}`;
+  const moBets=S.bets.filter(b=>b.date&&b.date.startsWith(moStr));
+  const mSt=calcStats(moBets);
+  const sumCard=el("div",{cls:"chart-wrap"});
+  sumCard.appendChild(el("div",{cls:"chart-title"},[MONTHS[mo].toUpperCase()+" SUMMARY"]));
+  const sumGrid=el("div",{style:{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"8px"}});
+  [{label:"P/L",value:fmt(mSt.profit),color:mSt.profit>=0?"#4ade80":"#f87171"},
+   {label:"W-L",value:`${mSt.wins}-${mSt.losses}`,color:"#e2e8f0"},
+   {label:"WAGERED",value:"$"+mSt.wagered.toFixed(0),color:"#94a3b8"},
   ].forEach(i=>{
-    grid.appendChild(el("div",{cls:"stat-card"},[
-      el("div",{cls:"stat-label"},[i.label]),
-      el("div",{cls:"stat-value",style:{color:i.color,fontSize:"14px"}},[String(i.value)]),
+    sumGrid.appendChild(el("div",{style:{textAlign:"center"}},[
+      el("div",{style:{fontSize:"9px",color:"var(--muted)",marginBottom:"3px"}},[i.label]),
+      el("div",{style:{fontSize:"14px",fontWeight:"500",color:i.color}},[i.value]),
     ]));
   });
+  sumCard.appendChild(sumGrid);
+  wrap.appendChild(sumCard);
+
+  return wrap;
+}
+
+function buildDrawer(dateStr){
+  const dayMap=buildDayMap(S.bets);
+  const info=dayMap[dateStr]||{bets:[],pl:0};
+  const [yr,mo,dy]=dateStr.split("-");
+  const label=`${MONTHS[parseInt(mo)-1]} ${parseInt(dy)}, ${yr}`;
+
+  const overlay=el("div",{cls:"drawer-overlay",onClick:()=>set({drawerDate:null})});
+  document.body.appendChild(overlay);
+
+  const drawer=el("div",{cls:"drawer"});
+  drawer.appendChild(el("div",{cls:"drawer-handle"}));
+  drawer.appendChild(el("div",{cls:"drawer-title"},[label.toUpperCase()]));
+
+  const pl=info.pl||0;
+  const plEl=el("div",{cls:"drawer-pl",style:{color:pl>0?"#4ade80":pl<0?"#f87171":"#e2e8f0"}},[
+    pl===0?"No settled bets":(pl>0?"+":"")+fmt(pl)+" on the day"
+  ]);
+  drawer.appendChild(plEl);
+
+  const betsWrap=el("div",{cls:"drawer-bets"});
+  if(!info.bets||info.bets.length===0){
+    betsWrap.appendChild(el("div",{cls:"drawer-empty"},["No bets on this day"]));
+  }else{
+    info.bets.forEach(bet=>betsWrap.appendChild(buildBetCard(bet,true)));
+  }
+  drawer.appendChild(betsWrap);
+  document.body.appendChild(drawer);
+}
+
+// ═══════════════════════════════════
+//  STATS + BANKROLL PAGE
+// ═══════════════════════════════════
+function buildStatsPage(){
+  const wrap=el("div",{cls:"wrap"});
+  wrap.appendChild(el("div",{cls:"page-header"},[el("div",{},[el("div",{cls:"logo"},["STATS"]),el("div",{cls:"logo-sub"},["& BANKROLL"])])]));
+
+  // ── Bankroll hero ──
+  const br=S.bankroll;
+  const st=calcStats(S.bets);
+  const current=br.starting+st.profit;
+  const unitVal=parseFloat(br.unitValue)||10;
+  const pct=br.starting>0?clamp((current/br.starting)*100,0,200):0;
+
+  const hero=el("div",{cls:"bank-hero"});
+  hero.appendChild(el("div",{style:{fontSize:"10px",color:"var(--muted)",letterSpacing:"1.5px",marginBottom:"3px"}},["CURRENT BANKROLL"]));
+  hero.appendChild(el("div",{cls:"bank-amount"},[fmt(current)]));
+  if(br.useUnits)hero.appendChild(el("div",{cls:"bank-sub"},[(current/unitVal).toFixed(1)+" "+br.unitName+"s"]));
+  if(br.starting>0){
+    const diff=current-br.starting;
+    hero.appendChild(el("div",{cls:"bank-sub",style:{color:diff>=0?"#4ade80":"#f87171",marginTop:"3px"}},[`${diff>=0?"+":""}${fmt(diff)} from starting`]));
+    hero.appendChild(el("div",{cls:"progress-bar"},[el("div",{cls:"progress-fill",style:{width:clamp(pct,0,100)+"%",background:current>=br.starting?"#166534":"#7f1d1d"}})]));
+  }
+  wrap.appendChild(hero);
+
+  // ── Bankroll settings ──
+  const settCard=el("div",{cls:"chart-wrap"});
+  settCard.appendChild(el("div",{cls:"chart-title"},["BANKROLL SETTINGS"]));
+  if(!S.bankEditing){
+    [{label:"Starting Bankroll",val:"$"+(br.starting||0)},
+     {label:"Unit Name",val:br.unitName||"Unit"},
+     {label:"Unit Value",val:"$"+(br.unitValue||10)},
+     {label:"Units Mode",val:br.useUnits?"On":"Off"},
+    ].forEach(r=>{
+      const row=el("div",{cls:"setting-row"});
+      row.appendChild(el("div",{cls:"setting-label"},[r.label]));
+      row.appendChild(el("div",{cls:"unit-display"},[r.val]));
+      settCard.appendChild(row);
+    });
+    settCard.appendChild(el("button",{style:{marginTop:"10px",width:"100%",padding:"8px",fontSize:"12px",background:"var(--surface2)",color:"var(--text)",border:"1px solid var(--border2)",borderRadius:"7px"},onClick:()=>set({bankEditing:true,bankForm:{...br}})},["Edit Settings"]));
+  }else{
+    const bf=S.bankForm;
+    const si=el("input",{type:"number",min:"0",placeholder:"1000",value:bf.starting||"",onChange:e=>set(s=>({bankForm:{...s.bankForm,starting:parseFloat(e.target.value)||0}}))});
+    settCard.appendChild(el("div",{style:{marginBottom:"9px"}},[field("STARTING BANKROLL ($)",si)]));
+    const uni=el("input",{type:"text",placeholder:"Unit",value:bf.unitName||"Unit",onChange:e=>set(s=>({bankForm:{...s.bankForm,unitName:e.target.value}}))});
+    settCard.appendChild(el("div",{style:{marginBottom:"9px"}},[field("UNIT NAME",uni)]));
+    const uvi=el("input",{type:"number",min:"0",placeholder:"10",value:bf.unitValue||10,onChange:e=>set(s=>({bankForm:{...s.bankForm,unitValue:parseFloat(e.target.value)||10}}))});
+    settCard.appendChild(el("div",{style:{marginBottom:"9px"}},[field("UNIT VALUE ($)",uvi)]));
+    const toggleRow=el("div",{cls:"setting-row",style:{marginBottom:"9px"}});
+    toggleRow.appendChild(el("div",{cls:"setting-label"},["Use Units Mode"]));
+    toggleRow.appendChild(el("button",{style:{padding:"5px 14px",fontSize:"11px",borderRadius:"6px",border:"1px solid",background:bf.useUnits?"#052e16":"var(--surface2)",color:bf.useUnits?"#4ade80":"var(--muted)",borderColor:bf.useUnits?"#166534":"var(--border2)"},onClick:()=>set(s=>({bankForm:{...s.bankForm,useUnits:!s.bankForm.useUnits}}))},[ bf.useUnits?"On":"Off"]));
+    settCard.appendChild(toggleRow);
+    const btnRow=el("div",{style:{display:"flex",gap:"8px"}});
+    btnRow.appendChild(el("button",{style:{flex:1,padding:"8px",fontSize:"12px",background:"var(--surface2)",color:"var(--muted)",border:"1px solid var(--border2)",borderRadius:"7px"},onClick:()=>set({bankEditing:false})},["Cancel"]));
+    btnRow.appendChild(el("button",{style:{flex:1,padding:"8px",fontSize:"12px",fontWeight:"600",background:"var(--gold)",color:"#09090b",border:"none",borderRadius:"7px"},onClick:()=>{saveBankroll(S.bankForm);set({bankEditing:false});}},["Save"]));
+    settCard.appendChild(btnRow);
+  }
+  wrap.appendChild(settCard);
+
+  // ── Stats ──
+  const roi=st.wagered>0?(st.profit/st.wagered)*100:0;
+  const total=st.wins+st.losses;
+  const winRate=total>0?((st.wins/total)*100).toFixed(1):0;
+  const streak=streakInfo(S.bets);
+
+  const grid=el("div",{style:{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"7px",marginBottom:"10px"}});
+  [{label:"WIN RATE",value:`${winRate}%`,color:"#e2e8f0"},
+   {label:"AVG WIN",value:st.wins>0?fmt(st.wonAmt/st.wins):"—",color:"#4ade80"},
+   {label:"AVG LOSS",value:st.losses>0?fmt(st.lostAmt/st.losses):"—",color:"#f87171"},
+   {label:"TOTAL BETS",value:S.bets.length,color:"#94a3b8"},
+   {label:"PUSHES",value:st.pushes,color:"#d4a574"},
+   {label:"ROI",value:fmtPct(roi),color:roi>=0?"#4ade80":"#f87171"},
+  ].forEach(i=>grid.appendChild(el("div",{cls:"stat-card"},[el("div",{cls:"stat-label"},[i.label]),el("div",{cls:"stat-value",style:{color:i.color,fontSize:"13px"}},[String(i.value)])])));
   wrap.appendChild(grid);
 
   // Streak
   const sk=SS[streak.type==="W"?"Won":"Lost"]||{bg:"#1e293b",color:"#94a3b8",border:"#334155"};
-  const streakCard=el("div",{cls:"chart-wrap",style:{textAlign:"center"}});
-  streakCard.appendChild(el("div",{cls:"chart-title"},["CURRENT STREAK"]));
-  if(streak.str>0){
-    streakCard.appendChild(el("div",{cls:"streak-badge",style:{background:sk.bg,color:sk.color,borderColor:sk.border,fontSize:"22px"}},[`${streak.str} ${streak.type}`]));
-  } else {
-    streakCard.appendChild(el("div",{style:{color:"var(--muted)",fontSize:"13px"}},["No settled bets yet"]));
-  }
-  wrap.appendChild(streakCard);
+  const skCard=el("div",{cls:"chart-wrap",style:{textAlign:"center"}});
+  skCard.appendChild(el("div",{cls:"chart-title"},["CURRENT STREAK"]));
+  skCard.appendChild(streak.str>0
+    ?el("div",{cls:"streak-badge",style:{background:sk.bg,color:sk.color,borderColor:sk.border}},[`${streak.str} ${streak.type}`])
+    :el("div",{style:{color:"var(--muted)",fontSize:"12px"}},["No settled bets yet"]));
+  wrap.appendChild(skCard);
 
-  // Monthly P/L bar chart
+  // Monthly chart
   const months=monthlyData(S.bets);
   if(months.length>0){
     const chartCard=el("div",{cls:"chart-wrap"});
     chartCard.appendChild(el("div",{cls:"chart-title"},["MONTHLY P/L"]));
     const maxAbs=Math.max(...months.map(([,v])=>Math.abs(v)),1);
     const barWrap=el("div",{cls:"bar-chart"});
-    months.forEach(([mo,val])=>{
+    months.forEach(([mo2,val])=>{
       const col=el("div",{cls:"bar-col"});
-      const pct=clamp((Math.abs(val)/maxAbs)*85,2,90);
-      const bar=el("div",{cls:"bar",style:{height:pct+"px",background:val>=0?"#166534":"#7f1d1d",border:`1px solid ${val>=0?"#4ade80":"#f87171"}`}});
+      const pct2=clamp((Math.abs(val)/maxAbs)*80,2,80);
       col.appendChild(el("div",{cls:"bar-val",style:{color:val>=0?"#4ade80":"#f87171"}},[val>=0?"+$"+val.toFixed(0):"-$"+Math.abs(val).toFixed(0)]));
-      col.appendChild(bar);
-      col.appendChild(el("div",{cls:"bar-label"},[mo.slice(5)]));
+      col.appendChild(el("div",{cls:"bar",style:{height:pct2+"px",background:val>=0?"#166534":"#7f1d1d",border:`1px solid ${val>=0?"#4ade80":"#f87171"}`}}));
+      col.appendChild(el("div",{cls:"bar-label"},[mo2.slice(5)]));
       barWrap.appendChild(col);
     });
     chartCard.appendChild(barWrap);
@@ -788,7 +858,7 @@ function buildStatsPage(){
         el("div",{style:{fontSize:"10px",color:"var(--muted)",marginTop:"2px"}},[`${d.wins}W-${d.losses}L`]),
       ]));
       row.appendChild(el("div",{style:{textAlign:"right"}},[
-        el("div",{style:{fontSize:"13px",color:d.profit>=0?"#4ade80":"#f87171",fontWeight:"500"}},[fmt(d.profit)]),
+        el("div",{style:{fontSize:"12px",color:d.profit>=0?"#4ade80":"#f87171",fontWeight:"500"}},[fmt(d.profit)]),
         el("div",{style:{fontSize:"10px",color:"var(--muted)"}},[d.wins+d.losses>0?((d.wins/(d.wins+d.losses))*100).toFixed(0)+"% win":""]),
       ]));
       sbCard.appendChild(row);
@@ -796,190 +866,181 @@ function buildStatsPage(){
     wrap.appendChild(sbCard);
   }
 
-  if(S.bets.length===0) wrap.appendChild(el("div",{cls:"empty"},["Log some bets to see stats."]));
+  if(S.bets.length===0)wrap.appendChild(el("div",{cls:"empty"},["Log some bets to see stats."]));
   return wrap;
 }
 
-// ═══════════════════════════════════════════════════════════
-//  BANKROLL PAGE
-// ═══════════════════════════════════════════════════════════
-function buildBankrollPage(){
-  const wrap=el("div",{cls:"wrap"});
-  wrap.appendChild(el("div",{cls:"page-header"},[el("div",{},[el("div",{cls:"logo"},["BANKROLL"]),el("div",{cls:"logo-sub"},["MONEY MANAGEMENT"])])]));
-
-  const br=S.bankroll;
-  const st=calcStats(S.bets);
-  const current=br.starting+st.profit;
-  const pct=br.starting>0?clamp((current/br.starting)*100,0,200):0;
-  const unitVal=parseFloat(br.unitValue)||10;
-
-  // Hero
-  const hero=el("div",{cls:"bank-hero"});
-  hero.appendChild(el("div",{style:{fontSize:"10px",color:"var(--muted)",letterSpacing:"1.5px",marginBottom:"4px"}},["CURRENT BANKROLL"]));
-  hero.appendChild(el("div",{cls:"bank-amount"},[fmt(current)]));
-  if(br.useUnits) hero.appendChild(el("div",{cls:"bank-sub"},[(current/unitVal).toFixed(1)+" "+br.unitName+"s"]));
-  if(br.starting>0){
-    const diff=current-br.starting;
-    hero.appendChild(el("div",{cls:"bank-sub",style:{color:diff>=0?"#4ade80":"#f87171",marginTop:"4px"}},[`${diff>=0?"+":""}${fmt(diff)} from starting`]));
-    hero.appendChild(el("div",{cls:"progress-bar",style:{marginTop:"10px"}},[
-      el("div",{cls:"progress-fill",style:{width:clamp(pct,0,100)+"%",background:current>=br.starting?"#166534":"#7f1d1d"}}),
-    ]));
-    hero.appendChild(el("div",{style:{display:"flex",justifyContent:"space-between",fontSize:"9px",color:"var(--muted)",marginTop:"3px"}},[
-      el("span",{},["$0"]),el("span",{},[fmt(br.starting)+" starting"]),
-    ]));
-  }
-  wrap.appendChild(hero);
-
-  // Unit sizing info
-  if(br.useUnits&&br.starting>0){
-    const uCard=el("div",{cls:"card",style:{marginBottom:"8px"}});
-    uCard.appendChild(el("div",{cls:"chart-title"},["UNIT SIZING"]));
-    const unitRows=[
-      {label:"1 "+br.unitName,val:unitVal},
-      {label:"2 "+br.unitName+"s",val:unitVal*2},
-      {label:"5 "+br.unitName+"s",val:unitVal*5},
-    ];
-    unitRows.forEach(r=>{
-      const row=el("div",{cls:"setting-row"});
-      row.appendChild(el("div",{},[el("div",{cls:"setting-label"},[r.label])]));
-      row.appendChild(el("div",{cls:"unit-display"},[fmt(r.val)]));
-      uCard.appendChild(row);
-    });
-    wrap.appendChild(uCard);
-  }
-
-  // Settings
-  const settCard=el("div",{cls:"card"});
-  settCard.appendChild(el("div",{cls:"chart-title"},["SETTINGS"]));
-
-  if(!S.bankEditing){
-    const rows=[
-      {label:"Starting Bankroll",sub:"",val:"$"+(br.starting||0)},
-      {label:"Unit Name",sub:"",val:br.unitName||"Unit"},
-      {label:"Unit Value",sub:"1 unit = ?",val:"$"+(br.unitValue||10)},
-      {label:"Use Units",sub:"",val:br.useUnits?"On":"Off"},
-    ];
-    rows.forEach(r=>{
-      const row=el("div",{cls:"setting-row"});
-      row.appendChild(el("div",{},[el("div",{cls:"setting-label"},[r.label]),r.sub?el("div",{cls:"setting-sub"},[r.sub]):null].filter(Boolean)));
-      row.appendChild(el("div",{cls:"unit-display"},[r.val]));
-      settCard.appendChild(row);
-    });
-    settCard.appendChild(el("button",{style:{marginTop:"12px",width:"100%",padding:"9px",fontSize:"12px",background:"var(--surface2)",color:"var(--text)",border:"1px solid var(--border2)",borderRadius:"7px"},onClick:()=>set({bankEditing:true,bankForm:{...br}})},["Edit Settings"]));
-  } else {
-    const bf=S.bankForm;
-    const si=el("input",{type:"number",min:"0",placeholder:"1000",value:bf.starting||"",onChange:e=>set(s=>({bankForm:{...s.bankForm,starting:parseFloat(e.target.value)||0}}))});
-    settCard.appendChild(el("div",{style:{marginBottom:"9px"}},[field("STARTING BANKROLL ($)",si)]));
-    const uni=el("input",{type:"text",placeholder:"Unit",value:bf.unitName||"Unit",onChange:e=>set(s=>({bankForm:{...s.bankForm,unitName:e.target.value}}))});
-    settCard.appendChild(el("div",{style:{marginBottom:"9px"}},[field("UNIT NAME",uni)]));
-    const uvi=el("input",{type:"number",min:"0",placeholder:"10",value:bf.unitValue||10,onChange:e=>set(s=>({bankForm:{...s.bankForm,unitValue:parseFloat(e.target.value)||10}}))});
-    settCard.appendChild(el("div",{style:{marginBottom:"9px"}},[field("UNIT VALUE ($)",uvi)]));
-
-    // Custom unit toggle
-    const toggleRow=el("div",{cls:"setting-row",style:{marginBottom:"9px"}});
-    toggleRow.appendChild(el("div",{},[el("div",{cls:"setting-label"},["Use Units Mode"])]));
-    const toggle=el("button",{
-      style:{padding:"5px 14px",fontSize:"11px",borderRadius:"6px",border:"1px solid",background:bf.useUnits?"#052e16":"var(--surface2)",color:bf.useUnits?"#4ade80":"var(--muted)",borderColor:bf.useUnits?"#166534":"var(--border2)"},
-      onClick:()=>set(s=>({bankForm:{...s.bankForm,useUnits:!s.bankForm.useUnits}}))
-    },[bf.useUnits?"On":"Off"]);
-    toggleRow.appendChild(toggle);
-    settCard.appendChild(toggleRow);
-
-    const btnRow=el("div",{style:{display:"flex",gap:"8px"}});
-    btnRow.appendChild(el("button",{style:{flex:1,padding:"9px",fontSize:"12px",background:"var(--surface2)",color:"var(--muted)",border:"1px solid var(--border2)",borderRadius:"7px"},onClick:()=>set({bankEditing:false})},["Cancel"]));
-    btnRow.appendChild(el("button",{style:{flex:1,padding:"9px",fontSize:"12px",fontWeight:"600",background:"var(--gold)",color:"#09090b",border:"none",borderRadius:"7px"},onClick:()=>{saveBankroll(S.bankForm);set({bankEditing:false});}},["Save"]));
-    settCard.appendChild(btnRow);
-  }
-  wrap.appendChild(settCard);
-  return wrap;
-}
-
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 //  TOOLS PAGE
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 function buildToolsPage(){
   const wrap=el("div",{cls:"wrap"});
   wrap.appendChild(el("div",{cls:"page-header"},[el("div",{},[el("div",{cls:"logo"},["TOOLS"]),el("div",{cls:"logo-sub"},["UTILITIES"])])]));
 
-  // Odds Converter
   const convCard=el("div",{cls:"tool-card"});
   convCard.appendChild(el("div",{cls:"tool-title"},["ODDS CONVERTER"]));
-  const typeRow=el("div",{style:{display:"flex",gap:"6px",marginBottom:"9px"}});
+  const typeRow=el("div",{style:{display:"flex",gap:"5px",marginBottom:"9px",flexWrap:"wrap"}});
   [["american","American"],["decimal","Decimal"],["fractional","Fractional"],["implied","Implied %"]].forEach(([id,label])=>{
-    typeRow.appendChild(el("button",{
-      style:{flex:1,padding:"5px 0",fontSize:"10px",borderRadius:"5px",border:"1px solid",background:S.convType===id?"#f59e0b18":"transparent",color:S.convType===id?"#f59e0b":"var(--muted)",borderColor:S.convType===id?"#f59e0b":"var(--border2)"},
-      onClick:()=>set({convType:id,convOdds:""})
-    },[label]));
+    typeRow.appendChild(el("button",{style:{flex:1,padding:"5px 0",fontSize:"10px",borderRadius:"5px",border:"1px solid",background:S.convType===id?"#f59e0b18":"transparent",color:S.convType===id?"#f59e0b":"var(--muted)",borderColor:S.convType===id?"#f59e0b":"var(--border2)"},onClick:()=>set({convType:id,convOdds:""})},[ label]));
   });
   convCard.appendChild(typeRow);
-
   const convPlaceholders={american:"-110 or +150",decimal:"2.5",fractional:"3/2",implied:"52.4"};
   const convInp=el("input",{type:"text",placeholder:convPlaceholders[S.convType]||"-110",value:S.convOdds,onChange:e=>set({convOdds:e.target.value})});
   convCard.appendChild(convInp);
-
-  // Calculate
   const raw=S.convOdds.trim();
   if(raw){
     let dec=1;
-    if(S.convType==="american") dec=toDecimal(raw);
+    if(S.convType==="american")dec=toDecimal(raw);
     else if(S.convType==="decimal"){const n=parseFloat(raw);if(!isNaN(n)&&n>1)dec=n;}
     else if(S.convType==="fractional"){const [a,b]=raw.split("/").map(Number);if(a&&b)dec=a/b+1;}
     else if(S.convType==="implied"){const n=parseFloat(raw);if(!isNaN(n)&&n>0&&n<100)dec=100/n;}
-
     if(dec>1){
       const res=el("div",{cls:"conv-result"});
-      const american=decToAmerican(dec),decimal=dec.toFixed(3),fractional=decToFractional(dec),implied=decToImplied(dec);
-      [["American",american],["Decimal",decimal],["Fractional",fractional],["Implied",implied]].forEach(([l,v])=>{
+      [["American",decToAmerican(dec)],["Decimal",dec.toFixed(3)],["Fractional",decToFractional(dec)],["Implied",decToImplied(dec)]].forEach(([l,v])=>{
         const row=el("div",{cls:"conv-row"});
         row.appendChild(el("span",{cls:"conv-label"},[l]));
         row.appendChild(el("span",{cls:"conv-val"},[v]));
         res.appendChild(row);
       });
-      // To win $100
-      const tw100=toWin(100,dec);
-      const row2=el("div",{cls:"conv-row",style:{borderTop:"1px solid var(--border)",marginTop:"4px",paddingTop:"4px"}});
-      row2.appendChild(el("span",{cls:"conv-label"},["Win on $100 bet"]));
-      row2.appendChild(el("span",{cls:"conv-val"},[fmt(tw100)]));
-      res.appendChild(row2);
+      const r2=el("div",{cls:"conv-row",style:{borderTop:"1px solid var(--border)",marginTop:"4px",paddingTop:"4px"}});
+      r2.appendChild(el("span",{cls:"conv-label"},["Win on $100 bet"]));
+      r2.appendChild(el("span",{cls:"conv-val"},[fmt(toWin(100,dec))]));
+      res.appendChild(r2);
       convCard.appendChild(res);
     }
   }
   wrap.appendChild(convCard);
 
-  // Export
   const exportCard=el("div",{cls:"tool-card"});
   exportCard.appendChild(el("div",{cls:"tool-title"},["DATA EXPORT"]));
   exportCard.appendChild(el("button",{cls:"export-btn",onClick:exportCSV},["📥 Export Bets as CSV"]));
-  exportCard.appendChild(el("div",{style:{fontSize:"10px",color:"var(--muted)"}},["Includes all bets, odds, stakes, and results. Open in Excel or Google Sheets."]));
+  exportCard.appendChild(el("div",{style:{fontSize:"10px",color:"var(--muted)"}},["All bets, odds, stakes, results. Opens in Excel or Google Sheets."]));
   wrap.appendChild(exportCard);
 
-  // Quick stats summary
   const st=calcStats(S.bets);
   const summCard=el("div",{cls:"tool-card"});
   summCard.appendChild(el("div",{cls:"tool-title"},["QUICK SUMMARY"]));
-  [
-    ["Total Bets Logged",S.bets.length],
-    ["Total Wagered",fmt(st.wagered)],
-    ["Total Won",fmt(st.wonAmt)],
-    ["Total Lost","-"+fmt(st.lostAmt)],
-    ["Net P/L",fmt(st.profit)],
-    ["Win Rate",st.wins+st.losses>0?((st.wins/(st.wins+st.losses))*100).toFixed(1)+"%":"—"],
-  ].forEach(([l,v])=>{
+  [["Total Bets",S.bets.length],["Wagered",fmt(st.wagered)],["Won",fmt(st.wonAmt)],["Lost","-"+fmt(st.lostAmt)],["Net P/L",fmt(st.profit)],["Win Rate",st.wins+st.losses>0?((st.wins/(st.wins+st.losses))*100).toFixed(1)+"%":"—"]].forEach(([l,v])=>{
     const row=el("div",{cls:"conv-row"});
     row.appendChild(el("span",{cls:"conv-label"},[l]));
     row.appendChild(el("span",{cls:"conv-val",style:{color:"var(--text)"}},[String(v)]));
     summCard.appendChild(row);
   });
   wrap.appendChild(summCard);
-
   return wrap;
 }
 
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
+//  FORM
+// ═══════════════════════════════════
+function buildForm(){
+  const f=S.form;
+  const card=el("div",{cls:"form-card"});
+  card.appendChild(el("div",{cls:"form-title"},[S.editing?"EDIT BET":"LOG BET"]));
+  if(!S.editing){
+    const tabs=el("div",{cls:"type-tabs"});
+    [{l:"Single",p:false},{l:"🔗 Parlay",p:true}].forEach(t=>tabs.appendChild(el("button",{cls:"type-tab"+(f.isParlay===t.p?" active":""),onClick:()=>set({form:{...emptyForm(),isParlay:t.p},errors:[]})},[t.l])));
+    card.appendChild(tabs);
+  }
+  if(!f.isParlay)card.appendChild(buildSingleFields());
+  else card.appendChild(buildParlayFields());
+  if(!f.isParlay){
+    const stk=parseFloat(f.stake)||0,dec=toDecimal(f.odds),win=toWin(stk,dec);
+    card.appendChild(el("div",{style:{marginBottom:"9px"}},[field("DATE",el("input",{type:"date",value:f.date,onChange:e=>set(s=>({form:{...s.form,date:e.target.value}}))}))]));
+    if(stk>0&&f.odds&&win>0)card.appendChild(el("div",{cls:"payout-line"},["To win: ",el("span",{style:{color:"#4ade80"}},[fmt(win)]),"  ·  Total: ",el("span",{style:{color:"#94a3b8"}},[fmt(win+stk)])]));
+  }
+  const notesEl=el("textarea",{rows:"2",placeholder:"Reasoning, line movement, etc.",onChange:e=>set(s=>({form:{...s.form,notes:e.target.value}}))});
+  notesEl.value=f.notes;
+  card.appendChild(el("div",{style:{marginBottom:"9px"}},[field("NOTES",notesEl)]));
+  card.appendChild(buildImageUpload());
+  if(S.editing)card.appendChild(el("div",{style:{marginBottom:"11px"}},[field("STATUS",selEl(STATUSES,f.status,e=>set(s=>({form:{...s.form,status:e.target.value}}))))]));
+  if(S.errors.length){const eb=el("div",{cls:"errors"});S.errors.forEach(e=>eb.appendChild(el("p",{},["• "+e])));card.appendChild(eb);}
+  const lc=f.legs.length;
+  card.appendChild(el("button",{cls:"submit-btn",onClick:submit},[S.editing?"Update Bet":f.isParlay?`Log Parlay (${lc} leg${lc!==1?"s":""})`:"Log Bet"]));
+  return card;
+}
+
+function buildSingleFields(){
+  const f=S.form;
+  const wrap=el("div",{cls:"grid2",style:{marginBottom:"9px"}});
+  wrap.appendChild(el("div",{cls:"full"},[field("DESCRIPTION",el("input",{type:"text",placeholder:"Chiefs -3.5 vs Ravens",value:f.description,onChange:e=>set(s=>({form:{...s.form,description:e.target.value}}))}))]));
+  wrap.appendChild(field("SPORT",selEl(SPORTS,f.sport,e=>set(s=>({form:{...s.form,sport:e.target.value}})),"Select sport")));
+  wrap.appendChild(field("BET TYPE",selEl(BET_TYPES,f.betType,e=>set(s=>({form:{...s.form,betType:e.target.value}})))));
+  wrap.appendChild(field("ODDS (American)",el("input",{type:"text",placeholder:"-110",value:f.odds,onChange:e=>set(s=>({form:{...s.form,odds:e.target.value}}))})));
+  wrap.appendChild(field("STAKE ($)",el("input",{type:"number",min:"0",placeholder:"50",value:f.stake,onChange:e=>set(s=>({form:{...s.form,stake:e.target.value}}))})));
+  wrap.appendChild(field("SPORTSBOOK",el("input",{type:"text",placeholder:"DraftKings",value:f.sportsbook||"",onChange:e=>set(s=>({form:{...s.form,sportsbook:e.target.value}}))})));
+  return wrap;
+}
+
+function buildParlayFields(){
+  const f=S.form;
+  const pDec=parlayDec(f.legs),pOdds=f.legs.length>=2?decToAmerican(pDec):"";
+  const stk=parseFloat(f.stake)||0,win=toWin(stk,pDec);
+  const wrap=el("div",{});
+  const grid=el("div",{cls:"grid2",style:{marginBottom:"12px"}});
+  grid.appendChild(field("PARLAY NAME (optional)",el("input",{type:"text",placeholder:"Sunday Ticket",value:f.description,onChange:e=>set(s=>({form:{...s.form,description:e.target.value}}))})));
+  grid.appendChild(field("DATE",el("input",{type:"date",value:f.date,onChange:e=>set(s=>({form:{...s.form,date:e.target.value}}))})));
+  grid.appendChild(field("STAKE ($)",el("input",{type:"number",min:"0",placeholder:"25",value:f.stake,onChange:e=>set(s=>({form:{...s.form,stake:e.target.value}}))})));
+  grid.appendChild(field("SPORTSBOOK",el("input",{type:"text",placeholder:"FanDuel",value:f.sportsbook||"",onChange:e=>set(s=>({form:{...s.form,sportsbook:e.target.value}}))})));
+  const pb=el("div",{cls:"odds-preview full"});
+  pb.appendChild(el("span",{style:{color:"var(--muted)"}},["Parlay odds: "]));
+  pb.appendChild(el("span",{style:{color:pOdds?"#f59e0b":"#3f3f46"}},[pOdds||(f.legs.length<2?"add ≥2 legs":"—")]));
+  if(win>0&&stk>0)pb.appendChild(el("span",{style:{color:"#4ade80"}},["→ "+fmt(win)]));
+  grid.appendChild(pb);
+  wrap.appendChild(grid);
+  const lw=el("div",{style:{marginBottom:"11px"}});
+  lw.appendChild(el("div",{style:{fontSize:"10px",color:"var(--muted)",marginBottom:"7px"}},[`LEGS (${f.legs.length})`]));
+  f.legs.forEach((leg,i)=>{
+    const lc=el("div",{cls:"leg-card"});
+    const lh=el("div",{cls:"leg-header"});
+    lh.appendChild(el("span",{cls:"leg-num"},[`LEG ${i+1}`]));
+    lh.appendChild(el("button",{style:{background:"transparent",color:"#f87171",fontSize:"10px",padding:"2px 7px",border:"1px solid #3f1212",borderRadius:"4px"},onClick:()=>set(s=>({form:{...s.form,legs:s.form.legs.filter(l=>l.id!==leg.id)}}))},["✕ Remove"]));
+    lc.appendChild(lh);
+    const lg=el("div",{cls:"leg-grid"});
+    lg.appendChild(field("PICK",el("input",{type:"text",placeholder:"Chiefs ML",value:leg.description,onChange:e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,description:v}:l)}}));}})));
+    lg.appendChild(field("SPORT",selEl(SPORTS,leg.sport,e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,sport:v}:l)}}));},"—")));
+    lg.appendChild(field("TYPE",selEl(BET_TYPES,leg.betType,e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,betType:v}:l)}}));})));
+    lg.appendChild(field("ODDS",el("input",{type:"text",placeholder:"-110",value:leg.odds,onChange:e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,odds:v}:l)}}));}})));
+    lc.appendChild(lg);
+    if(S.editing)lc.appendChild(el("div",{style:{marginTop:"7px"}},[field("STATUS",selEl(STATUSES,leg.status||"Pending",e=>{const v=e.target.value;set(s=>({form:{...s.form,legs:s.form.legs.map(l=>l.id===leg.id?{...l,status:v}:l)}}));}))]));
+    lw.appendChild(lc);
+  });
+  lw.appendChild(el("button",{cls:"add-leg",onClick:()=>set(s=>({form:{...s.form,legs:[...s.form.legs,emptyLeg()]}}))},["+ Add Leg"]));
+  wrap.appendChild(lw);
+  return wrap;
+}
+
+function buildImageUpload(){
+  const f=S.form;
+  const wrap=el("div",{style:{marginBottom:"12px"}});
+  wrap.appendChild(el("div",{cls:"field-label"},["ATTACHMENTS"]));
+  const fi=el("input",{type:"file",accept:"image/*",multiple:"true",style:{display:"none"},onChange:e=>handleImages(e.target.files)});
+  wrap.appendChild(fi);
+  if((f.images||[]).length>0){
+    const th=el("div",{cls:"thumbs"});
+    f.images.forEach((src,i)=>{
+      const tw=el("div",{cls:"thumb-wrap"});
+      tw.appendChild(el("img",{src,cls:"thumb",onClick:()=>set({lightbox:src})}));
+      tw.appendChild(el("button",{cls:"thumb-del",onClick:()=>set(s=>({form:{...s.form,images:s.form.images.filter((_,j)=>j!==i)}}))},["✕"]));
+      th.appendChild(tw);
+    });
+    wrap.appendChild(th);
+  }
+  const dz=el("div",{cls:"drop-zone",onClick:()=>fi.click()});
+  dz.appendChild(el("p",{},["📎 Click or drag images to attach"]));
+  dz.appendChild(el("small",{},["screenshots, tickets, receipts"]));
+  dz.addEventListener("dragover",e=>{e.preventDefault();dz.classList.add("drag-over");});
+  dz.addEventListener("dragleave",()=>dz.classList.remove("drag-over"));
+  dz.addEventListener("drop",e=>{e.preventDefault();dz.classList.remove("drag-over");handleImages(e.dataTransfer.files);});
+  wrap.appendChild(dz);
+  return wrap;
+}
+
+// ═══════════════════════════════════
 //  PWA + BOOT
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════
 if("serviceWorker" in navigator){
-  const sw=`const C="tb-v2";self.addEventListener("install",e=>e.waitUntil(caches.open(C).then(c=>c.addAll([self.location.href]))));self.addEventListener("fetch",e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).catch(()=>caches.match(e.request)))));`;
+  const sw=`const C="tb-v3";self.addEventListener("install",e=>e.waitUntil(caches.open(C).then(c=>c.addAll([self.location.href]))));self.addEventListener("fetch",e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).catch(()=>caches.match(e.request)))));`;
   const blob=new Blob([sw],{type:"application/javascript"});
   navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
 }
